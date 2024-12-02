@@ -1,0 +1,28 @@
+{
+  "name": "radzionkit",
+  "packageManager": "yarn@4.4.0",
+  "version": "0.0.1",
+  "private": true,
+  "workspaces": [
+    "./**"
+  ],
+  "devDependencies": {
+    "@types/react": "^18.2.45",
+    "@types/react-dom": "^18.2.18",
+    "@typescript-eslint/eslint-plugin": "^6.15.0",
+    "@typescript-eslint/parser": "^6.15.0",
+    "eslint": "^8.56.0",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.2.0",
+    "prettier": "^3.1.1",
+    "syncpack": "^12.0.1",
+    "typescript": "^5.3.3"
+  },
+  "scripts": {
+    "postinstall": "husky install",
+    "format": "eslint --fix && prettier --write",
+    "typecheck": "tsc --noEmit",
+    "sync-packages": "syncpack fix-mismatches"
+  }
+}

@@ -1,4 +1,3 @@
-import { IconWrapper } from '@lib/ui/icons/IconWrapper'
 import { HStack, VStack } from '@lib/ui/css/stack'
 import { dotSeparator } from '@lib/ui/layout/StackSeparatedBy'
 import { Text } from '@lib/ui/text'
@@ -54,16 +53,16 @@ export const JobExperience = ({
 }: JobExperienceProps) => {
   return (
     <VStack gap={8}>
-      <HStack alignItems="center" gap={8}>
-        <Text color="contrast" weight="500" size={16}>
-          {position}{' '}
-          <Text as="span" color="shy">
-            at
-          </Text>{' '}
-          {company}
+      <Text centerVertically={{ gap: 4 }} color="contrast" size={16}>
+        <span>{position}</span>
+        <Text as="span" color="shy">
+          at
         </Text>
-        {companyIcon && <IconWrapper>{companyIcon}</IconWrapper>}
-      </HStack>
+        <Text nowrap centerVertically={{ gap: 8 }} as="span">
+          {company}
+          {companyIcon}
+        </Text>
+      </Text>
 
       <HStack alignItems="center" gap={8}>
         <Text weight="500" size={14}>

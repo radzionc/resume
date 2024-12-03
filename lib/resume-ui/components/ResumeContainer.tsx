@@ -1,9 +1,12 @@
 import { borderRadius } from '@lib/ui/css/borderRadius'
+import { toSizeUnit } from '@lib/ui/css/toSizeUnit'
 import { getColor } from '@lib/ui/theme/getters'
 import styled from 'styled-components'
+import { resumeConfig } from './config'
 
 export const ResumeContainer = styled.div`
-  width: 880px;
+  max-width: ${toSizeUnit(resumeConfig.maxWidth)};
+  width: 100%;
   aspect-ratio: 1 / 1.414;
 
   line-height: 1.5;

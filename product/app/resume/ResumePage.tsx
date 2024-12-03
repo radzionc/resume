@@ -9,7 +9,7 @@ import { resumeConfig } from '@lib/resume-ui/components/config'
 const Container = styled.div`
   ${centerContent};
   ${verticalPadding(40)};
-  background: ${getColor('foreground')};
+  background: ${getColor('foregroundExtra')};
 
   @media (max-width: ${toSizeUnit(resumeConfig.maxWidth + 40)}) {
     ${verticalPadding(0)};

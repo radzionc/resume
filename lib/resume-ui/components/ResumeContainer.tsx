@@ -13,9 +13,7 @@ export const ResumeContainer = styled.div`
 
   display: flex;
   flex-direction: column;
-  gap: 2px;
   background: ${getColor('foreground')};
-  border: 2px solid ${getColor('foreground')};
 
   ${borderRadius.m}
   overflow: hidden;

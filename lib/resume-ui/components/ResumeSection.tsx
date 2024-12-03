@@ -1,13 +1,39 @@
+import { borderRadius } from '@lib/ui/css/borderRadius'
+import { centerContent } from '@lib/ui/css/centerContent'
+import { horizontalPadding } from '@lib/ui/css/horizontalPadding'
 import { VStack } from '@lib/ui/css/stack'
 import { UniformColumnGrid } from '@lib/ui/css/uniformColumnGrid'
 import { ComponentWithChildrenProps, UIComponentProps } from '@lib/ui/props'
-import { Text } from '@lib/ui/text'
+import { text } from '@lib/ui/text'
+import { getColor } from '@lib/ui/theme/getters'
 import { ReactNode } from 'react'
+import styled from 'styled-components'
 
 type ResumeSectionProps = ComponentWithChildrenProps &
   UIComponentProps & {
     title: ReactNode
   }
+
+const TitleContainer = styled.div`
+  position: relative;
+  width: 100%;
+  height: 1px;
+  background: ${getColor('foreground')};
+  ${centerContent};
+`
+
+const Title = styled.div`
+  height: 32px;
+  ${horizontalPadding(20)};
+
+  background: ${getColor('foreground')};
+  ${text({
+    color: 'primary',
+    weight: 600,
+  })}
+  ${centerContent};
+  ${borderRadius.s};
+`
 
 export const ResumeSection = ({
   title,
@@ -15,9 +41,10 @@ export const ResumeSection = ({
   ...rest
 }: ResumeSectionProps) => (
   <VStack gap={20} {...rest}>
-    <Text as="div" color="primary" weight="600">
-      {title}
-    </Text>
+    <TitleContainer>
+      <Title>{title}</Title>
+    </TitleContainer>
+
     <UniformColumnGrid minChildrenWidth={240} maxColumns={2} gap={40}>
       {children}
     </UniformColumnGrid>

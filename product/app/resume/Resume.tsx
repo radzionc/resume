@@ -65,17 +65,7 @@ export const Resume = (props: ComponentProps<typeof ResumeContainer>) => {
         </VStack>
         <DownloadResume render={() => containerElement.current} />
       </HStack>
-      <ResumeSection
-        title={
-          <>
-            Web3{' '}
-            <Text as="span" color="shy">
-              with
-            </Text>{' '}
-            React & TypeScript
-          </>
-        }
-      >
+      <ResumeSection title={<>Web3</>}>
         <JobExperience
           position="Front-end Engineer"
           company="Terraform Labs"
@@ -130,7 +120,7 @@ export const Resume = (props: ComponentProps<typeof ResumeContainer>) => {
           />
         </VStack>
       </ResumeSection>
-      <ResumeSection title={'Full-Stack Development'}>
+      <ResumeSection title={'Full-Stack'}>
         <JobExperience
           position="Senior Software Developer"
           company="Kontist"

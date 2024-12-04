@@ -3,7 +3,6 @@ import ReactToPrint from 'react-to-print'
 import { DownloadIcon } from '@lib/ui/icons/DonwloadIcon'
 import { Button } from '@lib/ui/buttons/Button'
 import { HStack } from '@lib/ui/css/stack'
-import { IconWrapper } from '@lib/ui/icons/IconWrapper'
 import { Text } from '@lib/ui/text'
 
 type DownloadResumeProps = {
@@ -14,16 +13,18 @@ const Container = styled(Button)`
   @media print {
     display: none;
   }
+
+  svg {
+    font-size: 16px;
+  }
 `
 
 export const DownloadResume = ({ render }: DownloadResumeProps) => (
   <ReactToPrint
     trigger={() => (
-      <Container size="s" kind="secondary">
+      <Container size="s" kind="primary">
         <HStack alignItems="center" gap={8}>
-          <IconWrapper style={{ fontSize: 16 }}>
-            <DownloadIcon />
-          </IconWrapper>
+          <DownloadIcon />
           <Text>Download</Text>
         </HStack>
       </Container>

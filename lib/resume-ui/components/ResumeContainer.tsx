@@ -3,6 +3,9 @@ import { toSizeUnit } from '@lib/ui/css/toSizeUnit'
 import { getColor } from '@lib/ui/theme/getters'
 import styled from 'styled-components'
 import { resumeConfig } from './config'
+import { vStack } from '@lib/ui/css/stack'
+import { horizontalPadding } from '@lib/ui/css/horizontalPadding'
+import { verticalPadding } from '@lib/ui/css/verticalPadding'
 
 export const ResumeContainer = styled.div`
   max-width: ${toSizeUnit(resumeConfig.maxWidth)};
@@ -11,21 +14,28 @@ export const ResumeContainer = styled.div`
 
   line-height: 1.5;
 
-  display: flex;
-  flex-direction: column;
-  background: ${getColor('foreground')};
+  ${vStack()}
 
+  background: ${getColor('background')};
   ${borderRadius.m}
   overflow: hidden;
-
-  > * {
-    background: ${getColor('background')};
-    padding: 20px;
-  }
 
   @media print {
     width: 100%;
     height: 100%;
     border-radius: 0;
+  }
+
+  > * {
+    ${horizontalPadding(resumeConfig.padding)}
+    ${verticalPadding(resumeConfig.padding * 2)}
+
+    &:first-child {
+      padding-top: ${toSizeUnit(resumeConfig.padding)};
+    }
+
+    &:last-child {
+      padding-bottom: ${toSizeUnit(resumeConfig.padding)};
+    }
   }
 `

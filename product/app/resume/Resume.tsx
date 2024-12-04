@@ -55,8 +55,9 @@ export const Resume = (props: ComponentProps<typeof ResumeContainer>) => {
             <Tag $color={colors.getLabelColor(10)}>CS Degree</Tag>
           </HStack>
           <HStack>
-            <Text color="contrast" weight="500">
-              💪 React, TypeScript, UX/UI, Web3{' '}
+            <Text centerVertically={{ gap: 6 }} color="contrast" weight="500">
+              <span>💪</span>
+              <span>React, TypeScript, UX/UI, Web3</span>
               <Text as="span" color="supporting">
                 + AWS, NodeJS, DynamoDB
               </Text>

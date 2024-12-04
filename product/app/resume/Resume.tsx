@@ -177,7 +177,7 @@ export const Resume = (props: ComponentProps<typeof ResumeContainer>) => {
             description="Speedy setup for robust full-stack TypeScript monorepo projects"
             achievement={
               <HStack alignItems="center" gap={8}>
-                <Text>203</Text>
+                <Text>217</Text>
                 <IconWrapper>
                   <StarIcon />
                 </IconWrapper>
@@ -189,7 +189,7 @@ export const Resume = (props: ComponentProps<typeof ResumeContainer>) => {
             name="Radzion Dev"
             url="https://www.youtube.com/c/radzion"
             description="A YouTube channel about web development"
-            achievement="1.7k subs"
+            achievement="1.75k subs"
           />
         </VStack>
       </ResumeSection>

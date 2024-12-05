@@ -53,3 +53,7 @@ I have a YouTube channel about software development with a focus on web developm
 - **LinkedIn**: [linkedin.com/in/radzion](https://www.linkedin.com/in/radzion)
 - **GitHub**: [github.com/radzionc](https://github.com/radzionc)
 - **Telegram**: [t.me/radzionc](https://t.me/radzionc)
+
+# Resume
+
+I made my resume with React and NextJS using RadzionKit. It's open-source and available at https://github.com/radzionc/resume. I deployed my resume to https://resume.radzion.com.

@@ -1,32 +1,30 @@
 import { ExternalLink } from '@lib/ui/navigation/Link/ExternalLink'
 import { HStack, VStack } from '@lib/ui/css/stack'
-import { Text } from '@lib/ui/text'
+import { text, Text } from '@lib/ui/text'
 import styled from 'styled-components'
 import { getColor } from '@lib/ui/theme/getters'
-import { round } from '@lib/ui/css/round'
-import { transition } from '@lib/ui/css/transition'
 import { dotSeparator } from '@lib/ui/layout/StackSeparatedBy'
 import { ReactNode } from 'react'
+import { toSizeUnit } from '@lib/ui/css/toSizeUnit'
+import { resumeConfig } from './config'
 
 interface Props {
   name: string
   url: string
   description: string
-  achievement?: ReactNode
+  primaryStat?: ReactNode
   responsibilities?: string[]
   icon?: ReactNode
 }
 
-const Title = styled(Text)`
+const Title = styled.p`
   border-bottom: 1px dashed;
-  ${transition}
-  line-height: 1.24;
-`
-
-const Badge = styled.div`
-  padding: 4px 8px;
-  background: ${getColor('mist')};
-  ${round};
+  ${text({
+    centerVertically: true,
+    color: 'contrast',
+    weight: 600,
+  })}
+  height: ${toSizeUnit(resumeConfig.personalProjectTitleHeight)};
 `
 
 const Link = styled(ExternalLink)`
@@ -39,7 +37,7 @@ export const PersonalProject = ({
   name,
   url,
   description,
-  achievement,
+  primaryStat,
   responsibilities,
   icon,
 }: Props) => {
@@ -49,18 +47,10 @@ export const PersonalProject = ({
         <Link to={url}>
           <HStack alignItems="center" gap={8}>
             {icon}
-            <Title centerVertically color="contrast" weight="600">
-              {name}
-            </Title>
+            <Title>{name}</Title>
           </HStack>
         </Link>
-        {achievement && (
-          <Badge>
-            <Text as="div" color="supporting" weight="500" size={14}>
-              {achievement}
-            </Text>
-          </Badge>
-        )}
+        {primaryStat}
       </HStack>
       <Text color="supporting">{description}</Text>
       {responsibilities && (

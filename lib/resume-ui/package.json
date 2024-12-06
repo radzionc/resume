@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
+    "@tanstack/react-query": "^5.62.2",
     "next": "^15.0.3",
     "react": "^18.2.0",
     "react-to-print": "^2.14.15",

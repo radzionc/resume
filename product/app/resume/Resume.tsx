@@ -18,14 +18,14 @@ import { MailIcon } from '@lib/ui/icons/MailIcon'
 import { XIcon } from '@lib/ui/icons/XIcon'
 import { ResumeFooterLink } from '@lib/resume-ui/components/ResumeFooterLink'
 import { PersonalProject } from '@lib/resume-ui/components/PersonalProject'
-import { IconWrapper } from '@lib/ui/icons/IconWrapper'
-import { StarIcon } from '@lib/ui/icons/StarIcon'
 import { useRhythmicRerender } from '@lib/ui/hooks/useRhythmicRerender'
 import { convertDuration } from '@lib/utils/time/convertDuration'
 import { TelegramIcon } from '@lib/ui/icons/TelegramIcon'
 import { LinkedinIcon } from '@lib/ui/icons/LinkedinIcon'
 import { YouTubeColoredIcon } from '@lib/ui/icons/YouTubeColoredIcon'
 import { IncreaserIcon } from './IncreaserIcon'
+import { GithubRepoResumeItem } from '@lib/resume-ui/github/components/GithubRepoResumeItem'
+import { ProjectPrimaryStat } from '@lib/resume-ui/components/ProjectPrimaryStat'
 
 const firstJobStartedAt = new Date(2017, 3)
 
@@ -162,7 +162,7 @@ export const Resume = (props: ComponentProps<typeof ResumeContainer>) => {
           name="Increaser"
           url="https://increaser.org"
           description="A productivity toolkit for remote knowledge workers"
-          achievement="$74 MRR"
+          primaryStat={<ProjectPrimaryStat>$74 MRR</ProjectPrimaryStat>}
           responsibilities={[
             'Full-stack development with TypeScript monorepo',
             'Designed and built core tools for productivity enhancement',
@@ -170,26 +170,22 @@ export const Resume = (props: ComponentProps<typeof ResumeContainer>) => {
           ]}
         />
         <VStack gap={20}>
-          <PersonalProject
-            icon={<GitHubIcon />}
-            name="Radzion Kit"
-            url="https://github.com/radzionc/radzionkit"
+          <GithubRepoResumeItem
+            value={{
+              owner: 'radzionc',
+              name: 'radzionkit',
+            }}
+            name="RadzionKit"
             description="Speedy setup for robust full-stack TypeScript monorepo projects"
-            achievement={
-              <HStack alignItems="center" gap={8}>
-                <Text>217</Text>
-                <IconWrapper>
-                  <StarIcon />
-                </IconWrapper>
-              </HStack>
-            }
           />
           <PersonalProject
             icon={<YouTubeColoredIcon />}
             name="Radzion Dev"
             url="https://www.youtube.com/c/radzion"
             description="A YouTube channel about web development"
-            achievement="1.75k subs"
+            primaryStat={
+              <ProjectPrimaryStat>1.76k subscribers</ProjectPrimaryStat>
+            }
           />
         </VStack>
       </ResumeSection>

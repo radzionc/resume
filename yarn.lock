@@ -714,6 +714,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@lib/resume-ui@workspace:lib/resume-ui"
   dependencies:
+    "@tanstack/react-query": "npm:^5.62.2"
     next: "npm:^15.0.3"
     react: "npm:^18.2.0"
     react-to-print: "npm:^2.14.15"
@@ -887,7 +888,7 @@ __metadata:
     "@emoji-mart/data": "npm:^1.1.2"
     "@emoji-mart/react": "npm:^1.1.1"
     "@next/eslint-plugin-next": "npm:^14.0.4"
-    "@tanstack/react-query": "npm:^5.17.19"
+    "@tanstack/react-query": "npm:^5.62.2"
     "@types/node": "npm:^20.14.9"
     "@types/react": "npm:^18.2.45"
     "@types/react-dom": "npm:^18.2.18"
@@ -1212,6 +1213,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@tanstack/query-core@npm:5.62.2":
+  version: 5.62.2
+  resolution: "@tanstack/query-core@npm:5.62.2"
+  checksum: 10/ea5c5c69b93e62cc89723d20fc2c5a1cee1190f6e4d185dfef266d6af917c409ed58ce977bc7cd2d5371b96e02bc61f848578e25be3a8d8e5f95c607abc34e4e
+  languageName: node
+  linkType: hard
+
 "@tanstack/react-query@npm:^5.17.19":
   version: 5.61.3
   resolution: "@tanstack/react-query@npm:5.61.3"
@@ -1220,6 +1228,17 @@ __metadata:
   peerDependencies:
     react: ^18 || ^19
   checksum: 10/87ac8bd9abf56b7ea892c188ce14596f5e888fb02a411ea8f774a1c9c148b239e99887335f232331633eb738d4e3d55a3ee356ccb99692e8f2a164f516f1dc9f
+  languageName: node
+  linkType: hard
+
+"@tanstack/react-query@npm:^5.62.2":
+  version: 5.62.2
+  resolution: "@tanstack/react-query@npm:5.62.2"
+  dependencies:
+    "@tanstack/query-core": "npm:5.62.2"
+  peerDependencies:
+    react: ^18 || ^19
+  checksum: 10/2d449d8fc1935a3b3ce4d3092feab3317e58db95160bc6cc11781878c703fa67199c559b71be5882285f5829e8dc398a58fc6409ba4ee770ef1398849a006c1c
   languageName: node
   linkType: hard
 

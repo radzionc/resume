@@ -1,6 +1,6 @@
 import { JobExperience } from '@lib/resume-ui/components/JobExperience'
 import { ResumeSection } from '@lib/resume-ui/components/ResumeSection'
-import { ShyTextButton } from '@lib/ui/buttons/ShyTextButton'
+import { shyTextButton, ShyTextButton } from '@lib/ui/buttons/ShyTextButton'
 import { VStack } from '@lib/ui/css/stack'
 import { ExternalLink } from '@lib/ui/navigation/Link/ExternalLink'
 import { IogIcon } from './IogIcon'
@@ -10,6 +10,11 @@ import { ZerionIcon } from './ZerionIcon'
 import { firstJobStartedAt } from '@product/config'
 import { KreoIcon } from './KreoIcon'
 import { KontistIcon } from './KontistIcon'
+import styled from 'styled-components'
+
+const ResumeLink = styled(ExternalLink)`
+  ${shyTextButton};
+`
 
 export const Jobs = () => (
   <>
@@ -24,9 +29,9 @@ export const Jobs = () => (
           <>
             Managed the end-to-end development of all front-end and server-side
             components within a monorepo for the{' '}
-            <ExternalLink to="https://dao.enterprise.money/">
-              <ShyTextButton text="Enterprise" />
-            </ExternalLink>{' '}
+            <ResumeLink to="https://dao.enterprise.money/">
+              Enterprise
+            </ResumeLink>{' '}
             DAO management protocol
           </>,
           'Making front-end for two experimental NFT protocols for decentralized story creation',
@@ -44,7 +49,7 @@ export const Jobs = () => (
             <>
               Developing front-end for a Cardano light wallet -{' '}
               <ExternalLink to="https://www.lace.io/">
-                <ShyTextButton text="Lace" />
+                <ShyTextButton>Lace</ShyTextButton>
               </ExternalLink>
             </>,
           ]}
@@ -60,9 +65,7 @@ export const Jobs = () => (
             <>Improving UX of the trading experience</>,
             <>
               Adding internalization to the{' '}
-              <ExternalLink to="https://app.zerion.io">
-                <ShyTextButton text="Zerion App" />
-              </ExternalLink>
+              <ExternalLink to="https://app.zerion.io">Zerion app</ExternalLink>
             </>,
           ]}
         />

@@ -1,3 +1,1 @@
-export const productName = 'Radzionkit'
-export const productIconUrl =
-  'https://kit.radzion.com/images/icon/favicon-196.png'
+export const firstJobStartedAt = new Date(2017, 3)

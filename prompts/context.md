@@ -18,11 +18,11 @@ The project was built within a TypeScript monorepo, with React/Next.js on the fr
 
 ### Front-end Engineer at IOG (Sep 2021 - Feb 2022)
 
-At IOG, I worked on **Lace**, a Cardano light wallet built with React and TypeScript. I was involved in developing the NFT gallery, balances, transaction history, and general product improvements.
+At IOG, I worked on [Lace](https://www.lace.io/), a Cardano light wallet built with React and TypeScript. I was involved in developing the NFT gallery, balances, transaction history, and general product improvements.
 
 ### Front-end Engineer at Zerion (Oct 2020 - Aug 2021)
 
-At Zerion, I worked on the **Zerion web app** built with React and TypeScript. I was responsible for wallet management and integrations with different wallets, improving the user experience when exchanging tokens, adding staking features, and implementing internationalization support.
+At Zerion, I worked on the [Zerion web app](https://app.zerion.io/) built with React and TypeScript. I was responsible for wallet management and integrations with different wallets, improving the user experience when exchanging tokens, adding staking features, and implementing internationalization support.
 
 ### Senior Software Engineer at Kontist (Jul 2019 - Sep 2020)
 
@@ -30,7 +30,7 @@ At Kontist, I worked as a full-stack engineer. I was involved in improving the o
 
 ### Software Developer at KREO (Apr 2017 - Jun 2019)
 
-At KREO, I was responsible for the web stack of a construction and architecture platform. I led the development of the web app built with React and TypeScript and was responsible for key features like a construction site management tool that allowed editing the site directly on the map, and a floor plan editor that enabled creating and editing floor plans of buildings, moving walls, windows, doors, etc. I also managed infrastructure using Terraform and AWS, and developed the API for the app built with Node.js, GraphQL, and DynamoDB.
+At KREO, I was one of the first developers of and was responsible for the web stack of a construction and architecture software - [KREO](https://www.kreo.net/). I led the development of the web app built with React and TypeScript and was responsible for key features like a construction site management tool that allowed editing the site directly on the map, and a floor plan editor that enabled creating and editing floor plans of buildings, moving walls, windows, doors, etc. I also managed infrastructure using Terraform and AWS, and developed the API for the app built with Node.js, GraphQL, and DynamoDB.
 
 ## My Projects
 
@@ -44,7 +44,7 @@ RadzionKit is a versatile full-stack development toolkit designed to streamline 
 
 ### Radzion Dev ([youtube.com/c/radzion](https://www.youtube.com/c/radzion))
 
-I have a YouTube channel about software development with a focus on web development. It has over 200 videos and over 1.7k subscribers. It mostly covers React, TypeScript, Node.js, AWS, and working within a monorepo.
+I have a YouTube channel about software development with a focus on web development, and front-end specifically. It covers React, TypeScript, Node.js, AWS, and working within a monorepo.
 
 ## Contacts
 
@@ -57,3 +57,5 @@ I have a YouTube channel about software development with a focus on web developm
 # Resume
 
 I made my resume with React and NextJS using RadzionKit. It's open-source and available at https://github.com/radzionc/resume. I deployed my resume to https://resume.radzion.com.
+
+My resume is just a single page. At the header there is my name, years of experience, mention that I have a CS degree, and a stack that I work with. Then goes my job experience with a section for each position, a section with my projects and a footer with contact information.

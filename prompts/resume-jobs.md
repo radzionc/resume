@@ -1,3 +1,3 @@
-Update `technologies` and `responsibilities` props for each job position in my resume. Keep responsibilities short and effective.
+Fill `responsibilities` props for each job position in my resume. Keep responsibilities short and effective. There could be maximum of 4 bullet points on position, and use your judgement to include less points when I had less contributions due to duration of employment.
 
-When displaying responsibilities, you can use `ResumeLink` component to mention the project I worked on.
+When displaying responsibilities, you can use `ProductLink` component to mention the project I worked on, but only if I mentioned the URL before! It has `to` prop for the url.  To highlight a technology, you can use `Tech` component.  The `responsibilities` prop receives an array of `React.Node`. 

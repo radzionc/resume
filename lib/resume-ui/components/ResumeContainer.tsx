@@ -34,8 +34,12 @@ export const ResumeContainer = styled.div`
       padding-top: ${toSizeUnit(resumeConfig.padding)};
     }
 
-    &:last-child {
+    &:nth-last-child(2) {
       padding-bottom: ${toSizeUnit(resumeConfig.padding)};
+    }
+
+    &:last-child {
+      ${verticalPadding(resumeConfig.padding)};
     }
   }
 `

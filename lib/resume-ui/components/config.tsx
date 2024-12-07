@@ -1,5 +1,5 @@
 export const resumeConfig = {
-  maxWidth: 880,
+  maxWidth: 794,
   padding: 20,
   personalProjectTitleHeight: 24,
 }

@@ -11,7 +11,6 @@ type JobExperienceProps = {
   startedAt: Date
   finishedAt?: Date
   responsibilities: ReactNode[]
-  technologies?: string[]
 }
 
 const { format: formatDate } = new Intl.DateTimeFormat('en-US', {
@@ -49,7 +48,6 @@ export const JobExperience = ({
   startedAt,
   finishedAt,
   companyIcon,
-  technologies,
 }: JobExperienceProps) => {
   return (
     <VStack gap={8}>
@@ -80,16 +78,6 @@ export const JobExperience = ({
             <Text color="supporting">{responsibility}</Text>
           </HStack>
         ))}
-        {technologies && (
-          <HStack gap={4}>
-            <Text size={14} color="shy">
-              Stack:
-            </Text>
-            <Text color="supporting" size={14}>
-              {technologies.join(', ')}
-            </Text>
-          </HStack>
-        )}
       </VStack>
     </VStack>
   )

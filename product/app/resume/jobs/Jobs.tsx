@@ -1,8 +1,6 @@
 import { JobExperience } from '@lib/resume-ui/components/JobExperience'
 import { ResumeSection } from '@lib/resume-ui/components/ResumeSection'
-import { shyTextButton, ShyTextButton } from '@lib/ui/buttons/ShyTextButton'
 import { VStack } from '@lib/ui/css/stack'
-import { ExternalLink } from '@lib/ui/navigation/Link/ExternalLink'
 import { IogIcon } from './IogIcon'
 import { TflIcon } from './TflIcon'
 import { ZerionIcon } from './ZerionIcon'
@@ -10,11 +8,8 @@ import { ZerionIcon } from './ZerionIcon'
 import { firstJobStartedAt } from '@product/config'
 import { KreoIcon } from './KreoIcon'
 import { KontistIcon } from './KontistIcon'
-import styled from 'styled-components'
-
-const ResumeLink = styled(ExternalLink)`
-  ${shyTextButton};
-`
+import { ProductLink } from '@lib/resume-ui/components/ProductLink'
+import { Tech } from '@lib/resume-ui/components/Tech'
 
 export const Jobs = () => (
   <>
@@ -27,15 +22,27 @@ export const Jobs = () => (
         companyIcon={<TflIcon />}
         responsibilities={[
           <>
-            Managed the end-to-end development of all front-end and server-side
-            components within a monorepo for the{' '}
-            <ResumeLink to="https://dao.enterprise.money/">
-              Enterprise
-            </ResumeLink>{' '}
-            DAO management protocol
+            Developed new features for{' '}
+            <ProductLink to="https://app.anchorprotocol.com/">
+              Anchor Protocol
+            </ProductLink>{' '}
+            using <Tech>React</Tech> and <Tech>TypeScript</Tech>.
           </>,
-          'Making front-end for two experimental NFT protocols for decentralized story creation',
-          'Building new features for the Anchor protocol',
+          <>
+            Built front-end for two NFT protocols on Terra with{' '}
+            <Tech>React</Tech> and <Tech>Next.js</Tech>.
+          </>,
+          <>
+            Led development of{' '}
+            <ProductLink to="https://enterprise.anchorprotocol.com/">
+              Enterprise Protocol
+            </ProductLink>
+            , a DAO management tool with cross-chain support.
+          </>,
+          <>
+            Maintained a TypeScript monorepo with <Tech>Node.js</Tech>,{' '}
+            <Tech>DynamoDB</Tech>, and <Tech>Terraform</Tech>.
+          </>,
         ]}
       />
       <VStack gap={20}>
@@ -47,10 +54,13 @@ export const Jobs = () => (
           companyIcon={<IogIcon />}
           responsibilities={[
             <>
-              Developing front-end for a Cardano light wallet -{' '}
-              <ExternalLink to="https://www.lace.io/">
-                <ShyTextButton>Lace</ShyTextButton>
-              </ExternalLink>
+              Worked on{' '}
+              <ProductLink to="https://www.lace.io/">Lace Wallet</ProductLink>,
+              developing features for NFT gallery and transaction history.
+            </>,
+            <>
+              Improved UI/UX for balances and general product experience using{' '}
+              <Tech>React</Tech> and <Tech>TypeScript</Tech>.
             </>,
           ]}
         />
@@ -61,11 +71,17 @@ export const Jobs = () => (
           startedAt={new Date(2020, 9)}
           companyIcon={<ZerionIcon />}
           responsibilities={[
-            'Implementing interfaces for wallets management',
-            <>Improving UX of the trading experience</>,
             <>
-              Adding internalization to the{' '}
-              <ExternalLink to="https://app.zerion.io">Zerion app</ExternalLink>
+              Enhanced wallet management and integrations for the{' '}
+              <ProductLink to="https://app.zerion.io/">
+                Zerion web app
+              </ProductLink>
+              .
+            </>,
+            <>
+              Implemented token exchange, staking features, and
+              internationalization support with <Tech>React</Tech> and{' '}
+              <Tech>TypeScript</Tech>.
             </>,
           ]}
         />
@@ -79,12 +95,19 @@ export const Jobs = () => (
         startedAt={new Date(2019, 6)}
         finishedAt={new Date(2020, 8)}
         responsibilities={[
-          'Technical planning and code reviews',
-          'Adding features to the native app',
-          'Developing a new web app',
-          'Improving sign up conversion',
+          <>
+            Improved onboarding and account creation workflows using{' '}
+            <Tech>React</Tech> and <Tech>Node.js</Tech>.
+          </>,
+          <>
+            Developed a web app for the product with <Tech>React</Tech>,{' '}
+            <Tech>TypeScript</Tech>, and <Tech>React Native</Tech>.
+          </>,
+          <>
+            Built and maintained APIs with <Tech>PostgreSQL</Tech> and{' '}
+            <Tech>Node.js</Tech>.
+          </>,
         ]}
-        technologies={['React Native', 'React', 'NodeJS', 'PostgreSQL']}
       />
       <JobExperience
         position="Software Developer"
@@ -93,18 +116,16 @@ export const Jobs = () => (
         startedAt={firstJobStartedAt}
         finishedAt={new Date(2019, 5)}
         responsibilities={[
-          'Implementing complex interfaces',
-          'Frontend architecture',
-          'Managing infrastructure',
-          'Developing microservices',
-        ]}
-        technologies={[
-          'React',
-          'Redux',
-          'Terraform',
-          'AWS',
-          'NodeJS',
-          'DynamoDB',
+          <>
+            Developed the web app for{' '}
+            <ProductLink to="https://www.kreo.net/">KREO</ProductLink> using{' '}
+            <Tech>React</Tech> and <Tech>TypeScript</Tech>.
+          </>,
+          <>Built a construction site management tool and floor plan editor.</>,
+          <>
+            Managed infrastructure with <Tech>Terraform</Tech> and{' '}
+            <Tech>AWS</Tech>.
+          </>,
         ]}
       />
     </ResumeSection>

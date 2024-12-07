@@ -162,7 +162,6 @@ export const Resume = (props: ComponentProps<typeof ResumeContainer>) => {
           name="Increaser"
           url="https://increaser.org"
           description="A productivity toolkit for remote knowledge workers"
-          primaryStat={<ProjectPrimaryStat>$74 MRR</ProjectPrimaryStat>}
           responsibilities={[
             'Full-stack development with TypeScript monorepo',
             'Designed and built core tools for productivity enhancement',

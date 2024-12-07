@@ -5,6 +5,7 @@ import { Inter } from 'next/font/google'
 import { DarkLightThemeProvider } from '@lib/ui/theme/DarkLightThemeProvider'
 import { Page } from '@lib/next-ui/Page'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { ApiProvider } from '@product/api-ui/components/ApiProvider'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -25,7 +26,7 @@ function MyApp({ Component, pageProps }: MyAppProps) {
     <DarkLightThemeProvider value="dark">
       <GlobalStyle fontFamily={inter.style.fontFamily} />
       <QueryClientProvider client={queryClient}>
-        {component}
+        <ApiProvider>{component}</ApiProvider>
       </QueryClientProvider>
     </DarkLightThemeProvider>
   )

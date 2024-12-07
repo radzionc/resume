@@ -22,10 +22,9 @@ import { useRhythmicRerender } from '@lib/ui/hooks/useRhythmicRerender'
 import { convertDuration } from '@lib/utils/time/convertDuration'
 import { TelegramIcon } from '@lib/ui/icons/TelegramIcon'
 import { LinkedinIcon } from '@lib/ui/icons/LinkedinIcon'
-import { YouTubeColoredIcon } from '@lib/ui/icons/YouTubeColoredIcon'
 import { IncreaserIcon } from './IncreaserIcon'
 import { GithubRepoResumeItem } from '@lib/resume-ui/github/components/GithubRepoResumeItem'
-import { ProjectPrimaryStat } from '@lib/resume-ui/components/ProjectPrimaryStat'
+import { YouTubeResumeItem } from './YouTubeResumeItem'
 
 const firstJobStartedAt = new Date(2017, 3)
 
@@ -177,15 +176,7 @@ export const Resume = (props: ComponentProps<typeof ResumeContainer>) => {
             name="RadzionKit"
             description="Speedy setup for robust full-stack TypeScript monorepo projects"
           />
-          <PersonalProject
-            icon={<YouTubeColoredIcon />}
-            name="Radzion Dev"
-            url="https://www.youtube.com/c/radzion"
-            description="A YouTube channel about web development"
-            primaryStat={
-              <ProjectPrimaryStat>1.76k subscribers</ProjectPrimaryStat>
-            }
-          />
+          <YouTubeResumeItem />
         </VStack>
       </ResumeSection>
       <HStack

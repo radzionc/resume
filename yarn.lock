@@ -1116,7 +1116,7 @@ __metadata:
     eslint-config-next: "npm:^14.0.4"
     next: "npm:^15.0.3"
     next-sitemap: "npm:^4.2.3"
-    pwa-asset-generator: "npm:^6.3.1"
+    pwa-asset-generator: "npm:^6.4.0"
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"
     react-hook-form: "npm:^7.49.2"
@@ -6192,7 +6192,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pwa-asset-generator@npm:^6.3.1":
+"pwa-asset-generator@npm:^6.3.1, pwa-asset-generator@npm:^6.4.0":
   version: 6.4.0
   resolution: "pwa-asset-generator@npm:6.4.0"
   dependencies:

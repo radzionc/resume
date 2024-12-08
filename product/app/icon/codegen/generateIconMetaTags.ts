@@ -5,8 +5,7 @@ import { generateIconMetaTags } from '@lib/ui/metadata/codegen/generateIconMetaT
 const publicDirectory = path.resolve(__dirname, '../../public')
 
 generateIconMetaTags({
-  lightModeIconPath: path.resolve(__dirname, '../light-mode-icon.svg'),
-  darkModeIconPath: path.resolve(__dirname, '../dark-mode-icon.svg'),
+  lightModeIconPath: path.resolve(__dirname, '../icon.png'),
   publicDirectory,
   manifestPath: path.resolve(publicDirectory, 'manifest.json'),
   codeDirectory: path.resolve(__dirname, '../'),

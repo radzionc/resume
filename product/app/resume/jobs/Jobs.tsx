@@ -22,26 +22,26 @@ export const Jobs = () => (
         companyIcon={<TflIcon />}
         responsibilities={[
           <>
-            Developed new features for{' '}
+            Developed and maintained features for{' '}
             <ProductLink to="https://app.anchorprotocol.com/">
               Anchor Protocol
             </ProductLink>{' '}
             using <Tech>React</Tech> and <Tech>TypeScript</Tech>.
           </>,
           <>
-            Built front-end for two NFT protocols on Terra with{' '}
-            <Tech>React</Tech> and <Tech>Next.js</Tech>.
+            Built front-ends for two NFT protocols on Terra with{' '}
+            <Tech>Next.js</Tech>.
           </>,
           <>
-            Led development of{' '}
-            <ProductLink to="https://enterprise.anchorprotocol.com/">
+            Led the front-end and back-end development of{' '}
+            <ProductLink to="https://enterprise.money/">
               Enterprise Protocol
             </ProductLink>
-            , a DAO management tool with cross-chain support.
+            , supporting DAOs across Cosmos chains.
           </>,
           <>
-            Maintained a TypeScript monorepo with <Tech>Node.js</Tech>,{' '}
-            <Tech>DynamoDB</Tech>, and <Tech>Terraform</Tech>.
+            Implemented a TypeScript monorepo with <Tech>React</Tech> and{' '}
+            <Tech>Node.js</Tech>, integrating DynamoDB.
           </>,
         ]}
       />
@@ -54,13 +54,12 @@ export const Jobs = () => (
           companyIcon={<IogIcon />}
           responsibilities={[
             <>
-              Worked on{' '}
-              <ProductLink to="https://www.lace.io/">Lace Wallet</ProductLink>,
-              developing features for NFT gallery and transaction history.
+              Built the NFT gallery and transaction history for{' '}
+              <ProductLink to="https://www.lace.io/">Lace</ProductLink> using{' '}
+              <Tech>React</Tech> and <Tech>TypeScript</Tech>.
             </>,
             <>
-              Improved UI/UX for balances and general product experience using{' '}
-              <Tech>React</Tech> and <Tech>TypeScript</Tech>.
+              Enhanced wallet functionalities and general UX/UI improvements.
             </>,
           ]}
         />
@@ -72,16 +71,12 @@ export const Jobs = () => (
           companyIcon={<ZerionIcon />}
           responsibilities={[
             <>
-              Enhanced wallet management and integrations for the{' '}
-              <ProductLink to="https://app.zerion.io/">
-                Zerion web app
-              </ProductLink>
-              .
+              Improved wallet management and token exchange for{' '}
+              <ProductLink to="https://app.zerion.io/">Zerion</ProductLink>.
             </>,
             <>
-              Implemented token exchange, staking features, and
-              internationalization support with <Tech>React</Tech> and{' '}
-              <Tech>TypeScript</Tech>.
+              Integrated staking features and internationalization support with{' '}
+              <Tech>React</Tech>.
             </>,
           ]}
         />
@@ -96,16 +91,15 @@ export const Jobs = () => (
         finishedAt={new Date(2020, 8)}
         responsibilities={[
           <>
-            Improved onboarding and account creation workflows using{' '}
-            <Tech>React</Tech> and <Tech>Node.js</Tech>.
+            Improved onboarding and account creation using <Tech>React</Tech>{' '}
+            and <Tech>React Native</Tech>.
           </>,
           <>
-            Developed a web app for the product with <Tech>React</Tech>,{' '}
-            <Tech>TypeScript</Tech>, and <Tech>React Native</Tech>.
+            Developed a web app for the product with <Tech>TypeScript</Tech>.
           </>,
           <>
-            Built and maintained APIs with <Tech>PostgreSQL</Tech> and{' '}
-            <Tech>Node.js</Tech>.
+            Built and maintained back-end features using <Tech>Node.js</Tech>{' '}
+            and PostgreSQL.
           </>,
         ]}
       />
@@ -117,14 +111,13 @@ export const Jobs = () => (
         finishedAt={new Date(2019, 5)}
         responsibilities={[
           <>
-            Developed the web app for{' '}
-            <ProductLink to="https://www.kreo.net/">KREO</ProductLink> using{' '}
-            <Tech>React</Tech> and <Tech>TypeScript</Tech>.
+            Led development of a web app for construction software with{' '}
+            <Tech>React</Tech>.
           </>,
-          <>Built a construction site management tool and floor plan editor.</>,
+          <>Implemented a floor plan editor and site management tools.</>,
           <>
-            Managed infrastructure with <Tech>Terraform</Tech> and{' '}
-            <Tech>AWS</Tech>.
+            Managed infrastructure with <Tech>AWS</Tech> and{' '}
+            <Tech>Terraform</Tech>.
           </>,
         ]}
       />

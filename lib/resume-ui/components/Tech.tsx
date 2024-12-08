@@ -3,6 +3,6 @@ import styled from 'styled-components'
 
 export const Tech = styled.span`
   ${text({
-    weight: '600',
+    color: 'regular',
   })}
 `

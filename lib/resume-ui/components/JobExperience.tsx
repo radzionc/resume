@@ -51,7 +51,7 @@ export const JobExperience = ({
 }: JobExperienceProps) => {
   return (
     <VStack gap={8}>
-      <Text centerVertically={{ gap: 4 }} color="contrast" size={16}>
+      <Text centerVertically={{ gap: 4 }} color="primary" size={16}>
         <span>{position}</span>
         <Text as="span" color="shy">
           at

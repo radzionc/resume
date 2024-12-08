@@ -37,7 +37,7 @@ export const Resume = (props: ComponentProps<typeof ResumeContainer>) => {
               <span>💪</span>
               <span>React, TypeScript, UX/UI, Web3</span>
               <Text as="span" color="supporting">
-                + AWS, NodeJS, DynamoDB
+                + AWS, Node.js, DynamoDB
               </Text>
             </Text>
           </HStack>

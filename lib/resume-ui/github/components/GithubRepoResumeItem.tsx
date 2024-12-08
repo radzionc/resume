@@ -1,7 +1,9 @@
-import { ComponentWithValueProps } from '@lib/ui/props'
+import {
+  ComponentWithDescriptionProps,
+  ComponentWithValueProps,
+} from '@lib/ui/props'
 import { GithubRepo } from '../GithubRepo'
 import { EntityWithName } from '@lib/utils/entities/EntityWithName'
-import { EntityWithDescription } from '@lib/utils/entities/EntityWithDescription'
 import { GitHubIcon } from '@lib/ui/icons/GitHubIcon'
 import { StarIcon } from '@lib/ui/icons/StarIcon'
 import { PersonalProject } from '../../components/PersonalProject'
@@ -16,7 +18,7 @@ export const GithubRepoResumeItem = ({
   description,
 }: ComponentWithValueProps<GithubRepo> &
   EntityWithName &
-  EntityWithDescription) => {
+  ComponentWithDescriptionProps) => {
   const query = useGithubRepoQuery(value)
 
   return (

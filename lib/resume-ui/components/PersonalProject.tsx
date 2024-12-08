@@ -11,7 +11,7 @@ import { resumeConfig } from './config'
 interface Props {
   name: string
   url: string
-  description: string
+  description: ReactNode
   primaryStat?: ReactNode
   responsibilities?: string[]
   icon?: ReactNode

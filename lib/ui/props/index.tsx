@@ -166,3 +166,7 @@ export type NamedComponentProps = {
 export type ComponentWithKindProps<T> = {
   kind: T
 }
+
+export type ComponentWithDescriptionProps = {
+  description: ReactNode
+}

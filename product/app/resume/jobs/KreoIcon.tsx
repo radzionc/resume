@@ -12,7 +12,7 @@ export const KreoIcon = () => (
     </defs>
     <g transform="translate(-5854 -4744)">
       <g transform="translate(5934 4744) rotate(90)">
-        <g clip-path="url(#a)">
+        <g clipPath="url(#a)">
           <g transform="translate(2.4 4)">
             <circle cx="5.6" cy="5.6" r="5.6" fill="#6b62b9" />
             <circle

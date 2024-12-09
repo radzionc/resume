@@ -1,1 +1,1 @@
-Fill `description` props for each project in my resume. Keep them short and effective. To highlight a technology, you can use `Tech` component.  The `description` prop receives a `React.Node`. 
+Fill the `description` prop for each project in my resume. Keep the descriptions short and effective. To highlight a technology, use the `Tech` component. The `description` prop accepts a `React.Node`.

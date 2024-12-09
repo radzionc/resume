@@ -3,7 +3,6 @@ import { HStack, VStack } from '@lib/ui/css/stack'
 import { text, Text } from '@lib/ui/text'
 import styled from 'styled-components'
 import { getColor } from '@lib/ui/theme/getters'
-import { dotSeparator } from '@lib/ui/layout/StackSeparatedBy'
 import { ReactNode } from 'react'
 import { toSizeUnit } from '@lib/ui/css/toSizeUnit'
 import { resumeConfig } from './config'
@@ -13,7 +12,6 @@ interface Props {
   url: string
   description: ReactNode
   primaryStat?: ReactNode
-  responsibilities?: string[]
   icon?: ReactNode
 }
 
@@ -38,7 +36,6 @@ export const PersonalProject = ({
   url,
   description,
   primaryStat,
-  responsibilities,
   icon,
 }: Props) => {
   return (
@@ -53,16 +50,6 @@ export const PersonalProject = ({
         {primaryStat}
       </HStack>
       <Text color="supporting">{description}</Text>
-      {responsibilities && (
-        <VStack gap={8}>
-          {responsibilities.map((responsibility, index) => (
-            <HStack key={index} gap={4}>
-              <Text color="shy">{dotSeparator}</Text>
-              <Text color="supporting">{responsibility}</Text>
-            </HStack>
-          ))}
-        </VStack>
-      )}
     </VStack>
   )
 }

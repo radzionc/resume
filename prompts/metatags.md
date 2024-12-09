@@ -1,1 +1,1 @@
-Write title and description meta tags for my resume page.
+Write the title and description meta tags for my resume page.

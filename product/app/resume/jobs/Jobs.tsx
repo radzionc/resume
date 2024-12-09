@@ -22,22 +22,16 @@ export const Jobs = () => (
         companyIcon={<TflIcon />}
         responsibilities={[
           <>
-            Developed and maintained features for{' '}
-            <ProductLink to="https://app.anchorprotocol.com/">
-              Anchor Protocol
-            </ProductLink>{' '}
-            using <Tech>React</Tech> and <Tech>TypeScript</Tech>.
+            Developed and maintained features for using <Tech>React</Tech> and{' '}
+            <Tech>TypeScript</Tech>.
           </>,
           <>
             Built front-ends for two NFT protocols on Terra with{' '}
             <Tech>Next.js</Tech>.
           </>,
           <>
-            Led the front-end and back-end development of{' '}
-            <ProductLink to="https://enterprise.money/">
-              Enterprise Protocol
-            </ProductLink>
-            , supporting DAOs across Cosmos chains.
+            Led the front-end and back-end development of , supporting DAOs
+            across Cosmos chains.
           </>,
           <>
             Implemented a TypeScript monorepo with <Tech>React</Tech> and{' '}

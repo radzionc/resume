@@ -6,7 +6,11 @@ Based in Georgia (country), I am seeking a front-end position in web3 and am als
 
 ## Job Experience
 
-### Front-end Engineer at Terraform Labs (Mar 2022 - Aug 2024)
+### Senior Front-end Engineer at Vultisig (Aug 2024 - Present)
+
+At [Vultisig](https://vultisig.com/), I'm developing a cross-chain desktop wallet supporting EVM chains, UTXO chains, Solana, Polkadot, and more. Built with React and TypeScript using Wails, the application runs natively on Windows, Linux, and macOS. My responsibilities include architecting the application, creating the UI, implementing chain integrations, and developing MPC (Multi-Party Computation) functionality. This MPC approach significantly enhances security by eliminating the need for a single mnemonic phrase, instead allowing users to sign transactions across multiple devices for improved security and redundancy.
+
+### Front-end Engineer at Terraform Labs (Mar 2022 - Jul 2024)
 
 At Terraform Labs, I worked on **Anchor Protocol**, one of the largest DeFi protocols in web3 at the time. Using React and TypeScript, I contributed new features to the app.
 

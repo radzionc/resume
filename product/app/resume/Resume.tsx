@@ -28,7 +28,7 @@ export const Resume = (props: ComponentProps<typeof ResumeContainer>) => {
               Radzion
             </Text>
             <Tag $color={colors.getLabelColor(5)}>
-              {differenceInYears(now, firstJobStartedAt)} years of experience
+              {differenceInYears(now, firstJobStartedAt)}+ years exp
             </Tag>
             <Tag $color={colors.getLabelColor(10)}>CS Degree</Tag>
           </HStack>

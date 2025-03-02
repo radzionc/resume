@@ -28,7 +28,7 @@ export const ResumeContainer = styled.div`
 
   > * {
     ${horizontalPadding(resumeConfig.padding)}
-    ${verticalPadding(resumeConfig.padding * 2)}
+    ${verticalPadding(resumeConfig.padding * 1.8)}
 
     &:first-child {
       padding-top: ${toSizeUnit(resumeConfig.padding)};

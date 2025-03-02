@@ -8,6 +8,7 @@ import { resumeConfig } from '@lib/resume-ui/components/config'
 import { PageMetaTags } from '@lib/next-ui/metadata/PageMetaTags'
 
 const Container = styled.div`
+  height: 100%;
   ${centerContent};
   ${verticalPadding(40)};
   background: ${getColor('foregroundExtra')};

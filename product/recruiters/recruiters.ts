@@ -143,4 +143,8 @@ export const recruiters: Recruiter[] = [
     linkedin: 'https://www.linkedin.com/in/adir-yaakov-98a166174/',
     name: 'Adir',
   },
+  {
+    telegram: '@joezamm',
+    name: 'Joe',
+  },
 ]

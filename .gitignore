@@ -9,7 +9,7 @@
 
 node_modules
 
-set_env_vars.sh
+.envrc
 credentials.json
 *.tsbuildinfo
 

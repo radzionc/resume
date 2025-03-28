@@ -1,12 +1,13 @@
-import { ChangeEvent, ComponentProps, Ref, forwardRef, useState } from 'react'
+import { ChangeEvent, ComponentProps, useState } from 'react'
 import styled from 'styled-components'
 
-import { SharedTextInputProps } from './TextInput'
+import { textInput, textInputHorizontalPadding } from '../css/textInput'
 import { toSizeUnit } from '../css/toSizeUnit'
 import { Text } from '../text'
-import { textInput, textInputHorizontalPadding } from '../css/textInput'
+
 import { InputContainer } from './InputContainer'
 import { InputLabel } from './InputLabel'
+import { SharedTextInputProps } from './TextInput'
 
 const TextareaContainer = styled.textarea`
   ${textInput};
@@ -30,10 +31,7 @@ type TextAreaProps = ComponentProps<typeof TextareaContainer> &
     value?: string
   }
 
-export const TextArea = forwardRef(function TextAreaInner(
-  { onValueChange, label, ...props }: TextAreaProps,
-  ref: Ref<HTMLTextAreaElement> | null,
-) {
+export function TextArea({ onValueChange, label, ...props }: TextAreaProps) {
   const [charactersCount, setCharactersCount] = useState(0)
 
   return (
@@ -41,7 +39,6 @@ export const TextArea = forwardRef(function TextAreaInner(
       {label && <InputLabel>{label}</InputLabel>}
       <TextareaContainer
         {...props}
-        ref={ref}
         onChange={(event: ChangeEvent<HTMLTextAreaElement>) => {
           setCharactersCount(event.currentTarget.value.length)
           props.onChange?.(event)
@@ -57,4 +54,4 @@ export const TextArea = forwardRef(function TextAreaInner(
       )}
     </InputContainer>
   )
-})
+}

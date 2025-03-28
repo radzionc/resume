@@ -1,8 +1,9 @@
 import styled from 'styled-components'
-import { ComponentWithChildrenProps, UIComponentProps } from '../props'
 
-type PositionAbsolutelyByCenterProps = ComponentWithChildrenProps &
-  UIComponentProps & {
+import { ChildrenProp, UiProps } from '../props'
+
+type PositionAbsolutelyByCenterProps = ChildrenProp &
+  UiProps & {
     left: React.CSSProperties['left']
     top: React.CSSProperties['top']
   }

@@ -1,7 +1,10 @@
 import styled from 'styled-components'
+
 import { interactive } from '../css/interactive'
 
-export const UnstyledButton = styled.button`
+export const UnstyledButton = styled.button.attrs(({ type = 'button' }) => ({
+  type,
+}))`
   ${interactive};
   padding: 0;
   margin: 0;
@@ -13,7 +16,3 @@ export const UnstyledButton = styled.button`
   font-family: inherit;
   line-height: inherit;
 `
-
-UnstyledButton.defaultProps = {
-  type: 'button',
-}

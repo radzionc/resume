@@ -1,11 +1,11 @@
+import { HStack } from '@lib/ui/css/stack'
 import { transition } from '@lib/ui/css/transition'
 import { ExternalLink } from '@lib/ui/navigation/Link/ExternalLink'
-import { HStack } from '@lib/ui/css/stack'
+import { IconWrapper } from '@lib/ui/navigation/Sidebar/NavigationItem'
 import { Text } from '@lib/ui/text'
 import { getColor } from '@lib/ui/theme/getters'
 import { ReactNode } from 'react'
 import styled from 'styled-components'
-import { IconWrapper } from '@lib/ui/navigation/Sidebar/NavigationItem'
 
 interface Props {
   name: string

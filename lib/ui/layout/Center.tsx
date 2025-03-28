@@ -1,11 +1,12 @@
-import { ComponentProps } from 'react'
-import { ComponentWithChildrenProps } from '../props'
 import { VStack } from '@lib/ui/css/stack'
+import { ComponentProps } from 'react'
+
+import { ChildrenProp } from '../props'
 
 export const Center = ({
   children,
   ...rest
-}: ComponentWithChildrenProps & ComponentProps<typeof VStack>) => (
+}: ChildrenProp & ComponentProps<typeof VStack>) => (
   <VStack
     fullWidth
     fullHeight

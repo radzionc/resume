@@ -1,25 +1,25 @@
+import { Panel } from '@lib/ui/css/panel'
 import { ReactNode } from 'react'
 import styled from 'styled-components'
 
 import { ActionInsideInteractiveElement } from '../base/ActionInsideInteractiveElement'
-import { Panel } from '@lib/ui/css/panel'
+import { UnstyledButton } from '../buttons/UnstyledButton'
+import { borderRadius } from '../css/borderRadius'
+import { centerContent } from '../css/centerContent'
+import { interactive } from '../css/interactive'
+import { sameDimensions } from '../css/sameDimensions'
+import { takeWholeSpaceAbsolutely } from '../css/takeWholeSpaceAbsolutely'
+import { transition } from '../css/transition'
+import { CloseIcon } from '../icons/CloseIcon'
+import { ActionProp, ChildrenProp } from '../props'
 import { Text } from '../text'
 import { getColor } from '../theme/getters'
-import { ComponentWithActionProps, ComponentWithChildrenProps } from '../props'
-import { centerContent } from '../css/centerContent'
-import { takeWholeSpaceAbsolutely } from '../css/takeWholeSpaceAbsolutely'
-import { sameDimensions } from '../css/sameDimensions'
-import { interactive } from '../css/interactive'
-import { transition } from '../css/transition'
-import { UnstyledButton } from '../buttons/UnstyledButton'
-import { CloseIcon } from '../icons/CloseIcon'
-import { borderRadius } from '../css/borderRadius'
 
-interface ImageBannerProps extends ComponentWithActionProps {
+interface ImageBannerProps extends ActionProp {
   onClose: () => void
   title: ReactNode
   image: ReactNode
-  renderInteractiveArea: (props: ComponentWithChildrenProps) => ReactNode
+  renderInteractiveArea: (props: ChildrenProp) => ReactNode
 }
 
 const padding = '20px'

@@ -1,11 +1,12 @@
+import { PageMetaTags } from '@lib/next-ui/metadata/PageMetaTags'
+import { resumeConfig } from '@lib/resume-ui/components/config'
 import { centerContent } from '@lib/ui/css/centerContent'
-import styled from 'styled-components'
+import { toSizeUnit } from '@lib/ui/css/toSizeUnit'
 import { verticalPadding } from '@lib/ui/css/verticalPadding'
 import { getColor } from '@lib/ui/theme/getters'
+import styled from 'styled-components'
+
 import { Resume } from './Resume'
-import { toSizeUnit } from '@lib/ui/css/toSizeUnit'
-import { resumeConfig } from '@lib/resume-ui/components/config'
-import { PageMetaTags } from '@lib/next-ui/metadata/PageMetaTags'
 
 const Container = styled.div`
   min-height: 100%;

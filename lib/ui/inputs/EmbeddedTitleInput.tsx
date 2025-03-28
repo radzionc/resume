@@ -1,10 +1,9 @@
 import { toSizeUnit } from '@lib/ui/css/toSizeUnit'
-import { InputProps } from '@lib/ui/props'
-import { ComponentProps, forwardRef } from 'react'
-import styled from 'styled-components'
-
 import { MultilineTextInput } from '@lib/ui/inputs/MultilineTextInput'
 import { tightListItemConfig } from '@lib/ui/list/tightListItemConfig'
+import { InputProps } from '@lib/ui/props'
+import { ComponentProps } from 'react'
+import styled from 'styled-components'
 
 const Container = styled(MultilineTextInput)`
   line-height: ${toSizeUnit(tightListItemConfig.lineHeight)};
@@ -19,10 +18,13 @@ type EmbeddedTitleInputProps = InputProps<string> &
     onSubmit?: () => void
   }
 
-export const EmbeddedTitleInput = forwardRef<
-  HTMLTextAreaElement,
-  EmbeddedTitleInputProps
->(({ value, onChange, onSubmit, lineBreakEnabled, ...rest }, ref) => {
+export function EmbeddedTitleInput({
+  value,
+  onChange,
+  onSubmit,
+  lineBreakEnabled,
+  ...rest
+}: EmbeddedTitleInputProps) {
   return (
     <Container
       value={value}
@@ -40,8 +42,7 @@ export const EmbeddedTitleInput = forwardRef<
           event.preventDefault()
         }
       }}
-      ref={ref}
       {...rest}
     />
   )
-})
+}

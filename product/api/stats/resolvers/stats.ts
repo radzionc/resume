@@ -1,7 +1,8 @@
 import { assertFetchResponse } from '@lib/utils/fetch/assertFetchResponse'
+import { addQueryParams } from '@lib/utils/query/addQueryParams'
+
 import { getEnvVar } from '../../getEnvVar'
 import { ApiResolver } from '../../resolvers/ApiResolver'
-import { addQueryParams } from '@lib/utils/query/addQueryParams'
 
 const youTubeChannelId = 'UC15iv69GgcJWa8GoohNQzpw'
 

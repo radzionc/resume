@@ -1,11 +1,11 @@
 import { PersonalProject } from '@lib/resume-ui/components/PersonalProject'
-import { ResumeSection } from '@lib/resume-ui/components/ResumeSection'
-import { GithubRepoResumeItem } from '@lib/resume-ui/github/components/GithubRepoResumeItem'
-import { useApiQuery } from '@product/api-ui/hooks/useApiQuery'
 import { ProjectPrimaryStat } from '@lib/resume-ui/components/ProjectPrimaryStat'
+import { ResumeSection } from '@lib/resume-ui/components/ResumeSection'
+import { Tech } from '@lib/resume-ui/components/Tech'
+import { GithubRepoResumeItem } from '@lib/resume-ui/github/components/GithubRepoResumeItem'
 import { YouTubeColoredIcon } from '@lib/ui/icons/YouTubeColoredIcon'
 import { MatchQuery } from '@lib/ui/query/components/MatchQuery'
-import { Tech } from '@lib/resume-ui/components/Tech'
+import { useApiQuery } from '@product/api-ui/hooks/useApiQuery'
 
 export const Projects = () => {
   const query = useApiQuery('stats', undefined)

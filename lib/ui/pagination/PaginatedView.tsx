@@ -1,14 +1,16 @@
+import { HStack, VStack } from '@lib/ui/css/stack'
 import { ReactNode, useEffect, useRef } from 'react'
 import styled from 'styled-components'
+
+import { useIntersection } from '../hooks/useIntersection'
 import { Spinner } from '../loaders/Spinner'
-import { HStack, VStack } from '@lib/ui/css/stack'
 import { Text } from '../text'
 import { getColor } from '../theme/getters'
-import { useIntersection } from '../hooks/useIntersection'
 
 interface Props {
   children: ReactNode
   isLoading?: boolean
+  hasNextPage: boolean
   onRequestToLoadMore: () => void
 }
 
@@ -23,6 +25,7 @@ const Footer = styled(VStack)`
 export const PaginatedView = ({
   children,
   isLoading,
+  hasNextPage,
   onRequestToLoadMore,
 }: Props) => {
   const ref = useRef<HTMLDivElement>(null)
@@ -34,10 +37,15 @@ export const PaginatedView = ({
   })
 
   useEffect(() => {
-    if (intersection?.isIntersecting && !isLoading) {
+    if (intersection?.isIntersecting && !isLoading && hasNextPage) {
       onRequestToLoadMore()
     }
-  }, [intersection?.isIntersecting, onRequestToLoadMore, isLoading])
+  }, [
+    hasNextPage,
+    intersection?.isIntersecting,
+    isLoading,
+    onRequestToLoadMore,
+  ])
 
   return (
     <>

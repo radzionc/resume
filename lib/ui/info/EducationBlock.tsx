@@ -1,13 +1,14 @@
-import styled from 'styled-components'
-import { borderRadius } from '../css/borderRadius'
-import { IconWrapper } from '../icons/IconWrapper'
-import { HStack, VStack } from '@lib/ui/css/stack'
-import { ComponentWithChildrenProps, UIComponentProps } from '../props'
-import { getColor } from '../theme/getters'
-import { verticalPadding } from '../css/verticalPadding'
-import { toSizeUnit } from '../css/toSizeUnit'
 import { panelDefaultPadding } from '@lib/ui/css/panel'
+import { HStack, VStack } from '@lib/ui/css/stack'
+import styled from 'styled-components'
+
 import { Button } from '../buttons/Button'
+import { borderRadius } from '../css/borderRadius'
+import { toSizeUnit } from '../css/toSizeUnit'
+import { verticalPadding } from '../css/verticalPadding'
+import { IconWrapper } from '../icons/IconWrapper'
+import { ChildrenProp, UiProps } from '../props'
+import { getColor } from '../theme/getters'
 
 const Container = styled.div`
   ${borderRadius.s};
@@ -24,8 +25,8 @@ const IconContainer = styled(IconWrapper)`
   ${verticalPadding(2)};
 `
 
-type EducationBlockProps = ComponentWithChildrenProps &
-  UIComponentProps & {
+type EducationBlockProps = ChildrenProp &
+  UiProps & {
     onSubmit: () => void
   }
 

@@ -1,7 +1,8 @@
 import { enforceRange } from '@lib/utils/enforceRange'
+import { Point } from '@lib/utils/entities/Point'
 import { useMemo } from 'react'
+
 import { BoundingBox } from './useBoundingBox'
-import { Point } from '../entities/Point'
 
 type UseRelativePositionParams = {
   box: BoundingBox | null

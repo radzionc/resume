@@ -1,33 +1,32 @@
-import styled, { css } from 'styled-components'
-import { InvisibleHTMLRadio } from './InvisibleHTMLRadio'
-import { getColor, matchColor } from '../theme/getters'
-import { interactive } from '../css/interactive'
 import { HStack } from '@lib/ui/css/stack'
-import {
-  ComponentWithActiveState,
-  InputProps,
-  UIComponentProps,
-} from '../props'
-import { borderRadius } from '../css/borderRadius'
 import { useId } from 'react'
+import styled, { css } from 'styled-components'
+
+import { borderRadius } from '../css/borderRadius'
 import { horizontalPadding } from '../css/horizontalPadding'
+import { interactive } from '../css/interactive'
+import { IsActiveProp, InputProps, UiProps } from '../props'
+import { getColor, matchColor } from '../theme/getters'
+
+import { InvisibleHTMLRadio } from './InvisibleHTMLRadio'
 
 type RadioInputProps<T extends string> = InputProps<T> &
-  UIComponentProps & {
+  UiProps & {
     options: readonly T[]
     renderOption: (option: T) => React.ReactNode
   }
 
 const Wrapper = styled(HStack)`
-  height: 40px;
   gap: 2px;
   padding: 2px;
   ${borderRadius.m};
   border: 2px solid ${getColor('mistExtra')};
+  flex-wrap: wrap;
 `
 
-const Container = styled.label<ComponentWithActiveState>`
+const Container = styled.label<IsActiveProp>`
   position: relative;
+  min-height: 32px;
   ${horizontalPadding(12)};
   ${borderRadius.s};
   display: flex;

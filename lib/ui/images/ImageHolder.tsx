@@ -1,15 +1,9 @@
-import React, { forwardRef, ReactNode } from 'react'
+import React, { ComponentProps } from 'react'
 import styled from 'styled-components'
-import { getColor } from '../theme/getters'
-import { Center } from '../layout/Center'
-import { ImageIcon } from '../icons/ImageIcon'
 
-interface Props {
-  width?: React.CSSProperties['width']
-  height?: React.CSSProperties['height']
-  className?: string
-  children?: ReactNode
-}
+import { ImageIcon } from '../icons/ImageIcon'
+import { Center } from '../layout/Center'
+import { getColor } from '../theme/getters'
 
 export const Container = styled.div`
   position: relative;
@@ -20,6 +14,11 @@ export const Container = styled.div`
   box-shadow: ${({ theme }) => theme.shadows.small};
 `
 
+type ImpageHolderProps = ComponentProps<typeof Container> & {
+  width?: React.CSSProperties['width']
+  height?: React.CSSProperties['height']
+}
+
 const ImageIconWr = styled(Center)`
   z-index: -1;
 
@@ -28,16 +27,18 @@ const ImageIconWr = styled(Center)`
   background: ${getColor('mist')};
 `
 
-export const ImageHolder = forwardRef(function ImageHolderInner(
-  { width, height, children }: Props,
-  ref: React.Ref<HTMLDivElement> | null,
-) {
+export const ImageHolder = ({
+  width,
+  height,
+  children,
+  ...rest
+}: ImpageHolderProps) => {
   return (
-    <Container style={{ width, height }} ref={ref}>
+    <Container style={{ width, height }} {...rest}>
       <ImageIconWr>
         <ImageIcon />
       </ImageIconWr>
       {children}
     </Container>
   )
-})
+}

@@ -1,4 +1,3 @@
-import { ReactNode, useCallback, useId, useState } from 'react'
 import {
   DndContext,
   closestCenter,
@@ -10,16 +9,18 @@ import {
   DragOverlay,
 } from '@dnd-kit/core'
 import { SortableContext, verticalListSortingStrategy } from '@dnd-kit/sortable'
+import { ChildrenProp } from '@lib/ui/props'
 import { shouldBePresent } from '@lib/utils/assert/shouldBePresent'
+import { ReactNode, useCallback, useId, useState } from 'react'
+
 import { DnDItem } from './DnDItem'
 import { DnDItemStatus } from './DnDItemStatus'
-import { ComponentWithChildrenProps } from '@lib/ui/props'
 
 export type ItemChangeParams = {
   index: number
 }
 
-type RednerListProps = Record<string, any> & ComponentWithChildrenProps
+type RednerListProps = Record<string, any> & ChildrenProp
 
 type RenderListParams = {
   props: RednerListProps

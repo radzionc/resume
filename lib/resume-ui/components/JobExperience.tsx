@@ -1,8 +1,8 @@
 import { HStack, VStack } from '@lib/ui/css/stack'
 import { dotSeparator } from '@lib/ui/layout/StackSeparatedBy'
 import { Text } from '@lib/ui/text'
-import { ReactNode } from 'react'
 import { intervalToDuration } from 'date-fns'
+import { ReactNode } from 'react'
 
 type JobExperienceProps = {
   position: string

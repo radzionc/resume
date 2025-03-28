@@ -1,24 +1,20 @@
-import {
-  ComponentWithDescriptionProps,
-  ComponentWithValueProps,
-} from '@lib/ui/props'
-import { GithubRepo } from '../GithubRepo'
-import { EntityWithName } from '@lib/utils/entities/EntityWithName'
 import { GitHubIcon } from '@lib/ui/icons/GitHubIcon'
 import { StarIcon } from '@lib/ui/icons/StarIcon'
-import { PersonalProject } from '../../components/PersonalProject'
-import { getGithubRepoUrl } from '../utils/getGithubRepoUrl'
+import { ValueProp } from '@lib/ui/props'
 import { MatchQuery } from '@lib/ui/query/components/MatchQuery'
-import { useGithubRepoQuery } from '../queries/useGithubRepoQuery'
+import { EntityWithName } from '@lib/utils/entities/EntityWithName'
+
+import { PersonalProject } from '../../components/PersonalProject'
 import { ProjectPrimaryStat } from '../../components/ProjectPrimaryStat'
+import { GithubRepo } from '../GithubRepo'
+import { useGithubRepoQuery } from '../queries/useGithubRepoQuery'
+import { getGithubRepoUrl } from '../utils/getGithubRepoUrl'
 
 export const GithubRepoResumeItem = ({
   value,
   name,
   description,
-}: ComponentWithValueProps<GithubRepo> &
-  EntityWithName &
-  ComponentWithDescriptionProps) => {
+}: ValueProp<GithubRepo> & EntityWithName & { description: string }) => {
   const query = useGithubRepoQuery(value)
 
   return (

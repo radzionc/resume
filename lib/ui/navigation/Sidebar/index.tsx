@@ -1,6 +1,7 @@
-import styled from 'styled-components'
-import { ComponentWithChildrenProps } from '../../props'
 import { VStack } from '@lib/ui/css/stack'
+import styled from 'styled-components'
+
+import { ChildrenProp } from '../../props'
 
 const Container = styled.div`
   min-width: 260px;
@@ -10,7 +11,7 @@ const Container = styled.div`
   overflow: auto;
 `
 
-export const Sidebar = ({ children }: ComponentWithChildrenProps) => {
+export const Sidebar = ({ children }: ChildrenProp) => {
   return (
     <Container>
       <VStack alignItems="center" fullHeight justifyContent="space-between">

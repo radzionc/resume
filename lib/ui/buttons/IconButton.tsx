@@ -1,16 +1,19 @@
-import { ComponentProps, Ref, forwardRef } from 'react'
-import styled, { css } from 'styled-components'
-import { UnstyledButton } from './UnstyledButton'
+import { getHoverVariant } from '@lib/ui/theme/getHoverVariant'
 import { match } from '@lib/utils/match'
+import { ComponentProps } from 'react'
+import styled, { css } from 'styled-components'
+
+import { MergeRefs } from '../base/MergeRefs'
+import { borderRadius } from '../css/borderRadius'
 import { centerContent } from '../css/centerContent'
+import { interactive } from '../css/interactive'
 import { sameDimensions } from '../css/sameDimensions'
 import { toSizeUnit } from '../css/toSizeUnit'
+import { AsProp } from '../props'
 import { getColor } from '../theme/getters'
-import { borderRadius } from '../css/borderRadius'
-import { getHoverVariant } from '@lib/ui/theme/getHoverVariant'
 import { Tooltip } from '../tooltips/Tooltip'
-import { MergeRefs } from '../base/MergeRefs'
-import { interactive } from '../css/interactive'
+
+import { UnstyledButton } from './UnstyledButton'
 
 export const iconButtonSizes = ['s', 'm', 'l'] as const
 export type IconButtonSize = (typeof iconButtonSizes)[number]
@@ -115,31 +118,22 @@ export type IconButtonProps = Omit<
   size?: IconButtonSize
   kind?: IconButtonKind
   title: string
-  as?: React.ElementType
   isDisabled?: boolean | string
-}
+} & AsProp
 
-export const IconButton = forwardRef(function IconButton(
-  {
-    icon,
-    isDisabled = false,
-    onClick,
-
-    ...rest
-  }: IconButtonProps,
-  ref: Ref<HTMLButtonElement> | null,
-) {
+export function IconButton({
+  icon,
+  isDisabled = false,
+  onClick,
+  ...rest
+}: IconButtonProps) {
   const containerProps = {
     isDisabled: !!isDisabled,
     onClick: isDisabled ? undefined : onClick,
     ...rest,
   }
 
-  const buttonContent = (
-    <Container ref={ref} {...containerProps}>
-      {icon}
-    </Container>
-  )
+  const buttonContent = <Container {...containerProps}>{icon}</Container>
 
   if (typeof isDisabled === 'string') {
     return (
@@ -147,7 +141,7 @@ export const IconButton = forwardRef(function IconButton(
         content={isDisabled}
         renderOpener={({ ref: tooltipRef, ...tooltipRest }) => (
           <MergeRefs
-            refs={[ref, tooltipRef]}
+            refs={[rest.ref, tooltipRef]}
             render={(mergedRef) => (
               <Container ref={mergedRef} {...containerProps} {...tooltipRest}>
                 {icon}
@@ -160,4 +154,4 @@ export const IconButton = forwardRef(function IconButton(
   }
 
   return buttonContent
-})
+}

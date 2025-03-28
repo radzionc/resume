@@ -1,22 +1,33 @@
+import { attempt } from '@lib/utils/attempt'
 import { useMemo } from 'react'
 
-type Query<T> = {
-  data: T | undefined
-}
+import { Query } from '../Query'
 
-export const useTransformQueryData = <T, V, B>(
-  queryResult: B & Query<T>,
-  transform: (data: T) => V,
-): B & Query<V> => {
-  return useMemo(
-    () =>
-      ({
+type QueryBase<T> = Pick<Query<T>, 'data' | 'error'>
+
+export const useTransformQueryData = <
+  TInput,
+  TOutput,
+  TExtra extends object = {},
+>(
+  queryResult: QueryBase<TInput> & TExtra,
+  transform: (data: TInput) => TOutput,
+): QueryBase<TOutput> & Omit<TExtra, keyof QueryBase<TOutput>> => {
+  return useMemo(() => {
+    const initialData = queryResult.data
+    if (initialData === undefined) {
+      return {
         ...queryResult,
-        data:
-          queryResult.data !== undefined
-            ? transform(queryResult.data)
-            : undefined,
-      }) as B & Query<V>,
-    [queryResult, transform],
-  )
+        data: undefined,
+      }
+    }
+
+    const { data, error } = attempt<TOutput>(() => transform(initialData))
+
+    return {
+      ...queryResult,
+      data,
+      error,
+    }
+  }, [queryResult, transform])
 }

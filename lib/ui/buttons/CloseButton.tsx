@@ -1,10 +1,11 @@
-import { ComponentProps, forwardRef } from 'react'
-import { IconButton } from './IconButton'
+import { ComponentProps } from 'react'
+
 import { CloseIcon } from '../icons/CloseIcon'
 
-export const CloseButton = forwardRef<
-  HTMLButtonElement,
-  Omit<ComponentProps<typeof IconButton>, 'icon' | 'title'>
->(function CloseButton(props, ref) {
-  return <IconButton title="Close" ref={ref} {...props} icon={<CloseIcon />} />
-})
+import { IconButton } from './IconButton'
+
+export function CloseButton(
+  props: Omit<ComponentProps<typeof IconButton>, 'icon' | 'title'>,
+) {
+  return <IconButton title="Close" {...props} icon={<CloseIcon />} />
+}

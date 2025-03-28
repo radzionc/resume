@@ -1,7 +1,8 @@
 import styled from 'styled-components'
-import { TakeWholeSpaceAbsolutely } from '../css/takeWholeSpaceAbsolutely'
-import { ComponentWithChildrenProps, UIComponentProps } from '../props'
+
 import { hideScrollbars } from '../css/hideScrollbars'
+import { TakeWholeSpaceAbsolutely } from '../css/takeWholeSpaceAbsolutely'
+import { ChildrenProp, UiProps } from '../props'
 
 const Wrapper = styled.div`
   flex: 1;
@@ -17,9 +18,7 @@ const Container = styled(TakeWholeSpaceAbsolutely)<ContainerProps>`
   ${(props) => props.hideScrollbars && hideScrollbars}
 `
 
-type ScrollableFlexboxFillerProps = ComponentWithChildrenProps &
-  UIComponentProps &
-  ContainerProps
+type ScrollableFlexboxFillerProps = ChildrenProp & UiProps & ContainerProps
 
 export const ScrollableFlexboxFiller = ({
   children,

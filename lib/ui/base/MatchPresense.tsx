@@ -1,7 +1,8 @@
 import { ReactNode } from 'react'
-import { ComponentWithValueProps } from '../props'
 
-type MatchPresenseProps<T> = ComponentWithValueProps<T | null | undefined> & {
+import { ValueProp } from '../props'
+
+type MatchPresenseProps<T> = ValueProp<T | null | undefined> & {
   present: (value: T) => ReactNode
   absent: () => ReactNode
 }

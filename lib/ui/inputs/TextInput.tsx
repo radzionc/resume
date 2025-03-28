@@ -1,14 +1,15 @@
-import { ChangeEvent, ComponentProps, Ref, forwardRef } from 'react'
+import { VStack } from '@lib/ui/css/stack'
+import { ChangeEvent, ComponentProps } from 'react'
 import styled from 'styled-components'
 
-import { VStack } from '@lib/ui/css/stack'
-import { Spinner } from '../loaders/Spinner'
-import { ComponentWithClassNameProps, LabeledComponentProps } from '../props'
 import { textInput } from '../css/textInput'
+import { Spinner } from '../loaders/Spinner'
+import { ClassNameProp, LabelProp } from '../props'
+
 import { InputContainer } from './InputContainer'
 import { InputLabel } from './InputLabel'
 
-export type SharedTextInputProps = Partial<LabeledComponentProps> &
+export type SharedTextInputProps = Partial<LabelProp> &
   ComponentProps<typeof TextInputContainer> & {
     onValueChange?: (value: string) => void
     isLoading?: boolean
@@ -20,17 +21,14 @@ export interface TextInputProps
   inputOverlay?: React.ReactNode
 }
 
-export const TextInput = forwardRef(function TextInputInner(
-  {
-    onValueChange,
-    inputOverlay,
-    isLoading,
-    className,
-    label,
-    ...props
-  }: TextInputProps,
-  ref: Ref<HTMLInputElement> | null,
-) {
+export function TextInput({
+  onValueChange,
+  inputOverlay,
+  isLoading,
+  className,
+  label,
+  ...props
+}: TextInputProps) {
   return (
     <InputContainer>
       {label && <InputLabel>{label}</InputLabel>}
@@ -41,7 +39,6 @@ export const TextInput = forwardRef(function TextInputInner(
           <TextInputContainer
             {...props}
             className={className}
-            ref={ref}
             onChange={(event: ChangeEvent<HTMLInputElement>) => {
               props.onChange?.(event)
               onValueChange?.(event.currentTarget.value)
@@ -52,7 +49,7 @@ export const TextInput = forwardRef(function TextInputInner(
       </InputWr>
     </InputContainer>
   )
-})
+}
 
 const InputWr = styled.div`
   width: 100%;
@@ -65,7 +62,7 @@ export const TextInputContainer = styled.input`
   ${textInput};
 `
 
-export const TextInputLoader = ({ className }: ComponentWithClassNameProps) => (
+export const TextInputLoader = ({ className }: ClassNameProp) => (
   <TextInputContainer as="div" className={className}>
     <VStack fullHeight justifyContent="center">
       <Spinner />

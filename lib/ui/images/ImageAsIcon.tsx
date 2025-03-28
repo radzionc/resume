@@ -5,11 +5,11 @@ import { PictureIcon } from '@lib/ui/icons/PictureIcon'
 import { ContainImage } from '@lib/ui/images/ContainImage'
 import { SafeImage } from '@lib/ui/images/SafeImage'
 import { getColor } from '@lib/ui/theme/getters'
-
 import styled from 'styled-components'
-import { UIComponentProps } from '../props'
 
-type ImageAsIconProps = UIComponentProps & {
+import { UiProps } from '../props'
+
+type ImageAsIconProps = UiProps & {
   src?: string
   name: string
 }

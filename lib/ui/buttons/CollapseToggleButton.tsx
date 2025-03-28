@@ -1,9 +1,10 @@
+import { ComponentProps } from 'react'
 import styled from 'styled-components'
-import { ComponentProps, Ref, forwardRef } from 'react'
 
-import { IconButton } from './IconButton'
 import { transition } from '../css/transition'
 import { ChevronDownIcon } from '../icons/ChevronDownIcon'
+
+import { IconButton } from './IconButton'
 
 type CollapseToggleButtonProps = Omit<
   ComponentProps<typeof IconButton>,
@@ -20,22 +21,19 @@ const IconWrapper = styled.div<{ isOpen: boolean }>`
   }
 `
 
-export const CollapseToggleButton = forwardRef(
-  function CollapsableToggleIconButton(
-    { isOpen, ...props }: CollapseToggleButtonProps,
-    ref: Ref<HTMLButtonElement> | null,
-  ) {
-    return (
-      <IconButton
-        ref={ref}
-        {...props}
-        title={isOpen ? 'Collapse' : 'Expand'}
-        icon={
-          <IconWrapper isOpen={isOpen}>
-            <ChevronDownIcon />
-          </IconWrapper>
-        }
-      />
-    )
-  },
-)
+export function CollapseToggleButton({
+  isOpen,
+  ...props
+}: CollapseToggleButtonProps) {
+  return (
+    <IconButton
+      {...props}
+      title={isOpen ? 'Collapse' : 'Expand'}
+      icon={
+        <IconWrapper isOpen={isOpen}>
+          <ChevronDownIcon />
+        </IconWrapper>
+      }
+    />
+  )
+}

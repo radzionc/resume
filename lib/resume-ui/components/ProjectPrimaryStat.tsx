@@ -4,6 +4,7 @@ import { toSizeUnit } from '@lib/ui/css/toSizeUnit'
 import { text } from '@lib/ui/text'
 import { getColor } from '@lib/ui/theme/getters'
 import styled from 'styled-components'
+
 import { resumeConfig } from './config'
 
 export const ProjectPrimaryStat = styled.div`

@@ -1,9 +1,11 @@
+import { ReactNode } from 'react'
 import styled from 'styled-components'
+
+import { centerContent } from '../css/centerContent'
 import { toSizeUnit } from '../css/toSizeUnit'
 import { verticalPadding } from '../css/verticalPadding'
-import { centerContent } from '../css/centerContent'
-import { ComponentWithChildrenProps, UIComponentProps } from '../props'
-import { ReactNode } from 'react'
+import { ChildrenProp, UiProps } from '../props'
+
 import { tightListItemConfig } from './tightListItemConfig'
 
 type ContainerProps = {
@@ -31,8 +33,8 @@ const PrefixContainer = styled.div`
 `
 
 type PrefixedItemFrameProps = Partial<ContainerProps> &
-  ComponentWithChildrenProps &
-  UIComponentProps & {
+  ChildrenProp &
+  UiProps & {
     prefixWidth?: number
     prefix: ReactNode
   }

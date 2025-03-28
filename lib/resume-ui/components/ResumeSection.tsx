@@ -3,14 +3,14 @@ import { horizontalPadding } from '@lib/ui/css/horizontalPadding'
 import { round } from '@lib/ui/css/round'
 import { vStack } from '@lib/ui/css/stack'
 import { UniformColumnGrid } from '@lib/ui/css/uniformColumnGrid'
-import { ComponentWithChildrenProps, UIComponentProps } from '@lib/ui/props'
+import { ChildrenProp } from '@lib/ui/props'
 import { text } from '@lib/ui/text'
 import { getColor } from '@lib/ui/theme/getters'
-import { ReactNode } from 'react'
+import { ComponentProps, ReactNode } from 'react'
 import styled from 'styled-components'
 
-type ResumeSectionProps = ComponentWithChildrenProps &
-  UIComponentProps & {
+type ResumeSectionProps = ChildrenProp &
+  ComponentProps<typeof Container> & {
     title: ReactNode
   }
 

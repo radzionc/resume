@@ -1,20 +1,16 @@
 import styled, { css } from 'styled-components'
 
+import { centerContent } from '../../css/centerContent'
+import { interactive } from '../../css/interactive'
+import { round } from '../../css/round'
 import {
   InvisibleHTMLRadio,
   InvisibleHTMLRadioProps,
 } from '../../inputs/InvisibleHTMLRadio'
-import { centerContent } from '../../css/centerContent'
-import {
-  ComponentWithActiveState,
-  ComponentWithChildrenProps,
-  UIComponentProps,
-} from '../../props'
-import { interactive } from '../../css/interactive'
+import { IsActiveProp, ChildrenProp, UiProps } from '../../props'
 import { getColor } from '../../theme/getters'
-import { round } from '../../css/round'
 
-const Container = styled.label<ComponentWithActiveState>`
+const Container = styled.label<IsActiveProp>`
   ${interactive};
   ${round};
   text-decoration: none;
@@ -42,9 +38,7 @@ const Container = styled.label<ComponentWithActiveState>`
         `};
 `
 
-type TabNavigationItemProps = InvisibleHTMLRadioProps &
-  ComponentWithChildrenProps &
-  UIComponentProps
+type TabNavigationItemProps = InvisibleHTMLRadioProps & ChildrenProp & UiProps
 
 export const TabNavigationItem = ({
   isSelected,

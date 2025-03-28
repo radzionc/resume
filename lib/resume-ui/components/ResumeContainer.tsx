@@ -1,11 +1,12 @@
 import { borderRadius } from '@lib/ui/css/borderRadius'
+import { horizontalPadding } from '@lib/ui/css/horizontalPadding'
+import { vStack } from '@lib/ui/css/stack'
 import { toSizeUnit } from '@lib/ui/css/toSizeUnit'
+import { verticalPadding } from '@lib/ui/css/verticalPadding'
 import { getColor } from '@lib/ui/theme/getters'
 import styled from 'styled-components'
+
 import { resumeConfig } from './config'
-import { vStack } from '@lib/ui/css/stack'
-import { horizontalPadding } from '@lib/ui/css/horizontalPadding'
-import { verticalPadding } from '@lib/ui/css/verticalPadding'
 
 export const ResumeContainer = styled.div`
   max-width: ${toSizeUnit(resumeConfig.maxWidth)};

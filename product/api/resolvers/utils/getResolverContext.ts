@@ -1,7 +1,9 @@
 import { IncomingHttpHeaders } from 'http'
-import { ApiResolverContext } from '../ApiResolverContext'
+
 import { CountryCode } from '@lib/countries'
 import { extractHeaderValue } from '@lib/lambda/extractHeaderValue'
+
+import { ApiResolverContext } from '../ApiResolverContext'
 
 interface GetResolverContextParams {
   headers: IncomingHttpHeaders

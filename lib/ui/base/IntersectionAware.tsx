@@ -1,11 +1,12 @@
 import { RefObject, useRef, ReactNode } from 'react'
-import { useWasIt } from '../hooks/useWasIt'
+
 import { useIntersection } from '../hooks/useIntersection'
+import { useWasIt } from '../hooks/useWasIt'
 
 interface RenderParams<T extends HTMLElement> {
   wasIntersected: boolean
   isIntersecting: boolean
-  ref: RefObject<T>
+  ref: RefObject<T | null>
 }
 
 interface Props<T extends HTMLElement> {

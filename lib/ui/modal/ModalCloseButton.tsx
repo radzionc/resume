@@ -1,11 +1,12 @@
 import styled from 'styled-components'
-import { ClickableComponentProps } from '../props'
+
 import { Hoverable } from '../base/Hoverable'
-import { CloseIcon } from '../icons/CloseIcon'
 import { centerContent } from '../css/centerContent'
-import { getColor } from '../theme/getters'
-import { transition } from '../css/transition'
 import { sameDimensions } from '../css/sameDimensions'
+import { transition } from '../css/transition'
+import { CloseIcon } from '../icons/CloseIcon'
+import { OnClickProp } from '../props'
+import { getColor } from '../theme/getters'
 
 const IconWrapper = styled.div`
   font-size: 20px;
@@ -21,7 +22,7 @@ const Container = styled(Hoverable)`
   }
 `
 
-export const ModalCloseButton = ({ onClick }: ClickableComponentProps) => {
+export const ModalCloseButton = ({ onClick }: OnClickProp) => {
   return (
     <Container onClick={onClick}>
       <IconWrapper>

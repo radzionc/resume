@@ -1,8 +1,6 @@
-import { getRecordKeys } from './getRecordKeys'
+import { WithoutUndefinedFields } from '../types/WithoutUndefinedFields'
 
-type WithoutUndefinedFields<T extends Record<string, any>> = {
-  [K in keyof T]-?: Exclude<T[K], undefined>
-}
+import { getRecordKeys } from './getRecordKeys'
 
 export function withoutUndefinedFields<T extends Record<string, any>>(
   record: T,

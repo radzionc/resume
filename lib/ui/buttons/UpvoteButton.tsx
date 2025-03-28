@@ -1,15 +1,17 @@
+import { VStack } from '@lib/ui/css/stack'
 import styled from 'styled-components'
-import { UnstyledButton } from './UnstyledButton'
+
 import { borderRadius } from '../css/borderRadius'
 import { interactive } from '../css/interactive'
-import { getColor, matchColor } from '../theme/getters'
-import { VStack } from '@lib/ui/css/stack'
-import { IconWrapper } from '../icons/IconWrapper'
-import { Text } from '../text'
 import { CaretUpIcon } from '../icons/CaretUpIcon'
-import { ClickableComponentProps } from '../props'
+import { IconWrapper } from '../icons/IconWrapper'
+import { OnClickProp } from '../props'
+import { Text } from '../text'
+import { getColor, matchColor } from '../theme/getters'
 
-type UpvoteButtonProps = ClickableComponentProps & {
+import { UnstyledButton } from './UnstyledButton'
+
+type UpvoteButtonProps = OnClickProp & {
   value: boolean
   upvotes: number
 }

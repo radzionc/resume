@@ -1,11 +1,11 @@
-import { Center } from '../layout/Center'
 import { Hoverable } from '../base/Hoverable'
-import { ChecklistItemFrame } from './ChecklistItemFrame'
 import { PlusIcon } from '../icons/PlusIcon'
-import { ClickableComponentProps, ComponentWithChildrenProps } from '../props'
+import { Center } from '../layout/Center'
+import { OnClickProp, ChildrenProp } from '../props'
 
-type AddChecklistItemPromptProps = ClickableComponentProps &
-  ComponentWithChildrenProps
+import { ChecklistItemFrame } from './ChecklistItemFrame'
+
+type AddChecklistItemPromptProps = OnClickProp & ChildrenProp
 
 export const AddChecklistItemPrompt = ({
   onClick,

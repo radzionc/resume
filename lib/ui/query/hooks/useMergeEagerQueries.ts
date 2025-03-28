@@ -1,5 +1,6 @@
 import { isEmpty } from '@lib/utils/array/isEmpty'
 import { withoutUndefined } from '@lib/utils/array/withoutUndefined'
+
 import { EagerQuery } from '../Query'
 
 type MergeEagerQueriesInput<T, R, E = unknown> = {
@@ -15,6 +16,7 @@ export function useMergeEagerQueries<T, R, E = unknown>({
 
   return {
     isPending: queries.some((query) => query.isPending),
+    isLoading: queries.some((query) => query.isLoading),
     errors: queries.flatMap((query) => query.errors),
     data: isEmpty(resolvedQueries) ? undefined : joinData(resolvedQueries),
   }

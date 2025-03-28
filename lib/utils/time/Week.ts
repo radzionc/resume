@@ -1,15 +1,17 @@
-import { haveEqualFields } from '../record/haveEqualFields'
 import {
   endOfISOWeek,
   format,
-  getYear,
   setWeek,
   setYear,
   startOfISOWeek,
+  getISOWeek,
+  getISOWeekYear,
 } from 'date-fns'
-import { getWeekIndex } from './getWeekIndex'
-import { convertDuration } from './convertDuration'
+
 import { Interval } from '../interval/Interval'
+import { haveEqualFields } from '../record/haveEqualFields'
+
+import { convertDuration } from './convertDuration'
 
 export type Week = {
   year: number
@@ -21,11 +23,10 @@ export const areSameWeek = <T extends Week>(a: T, b: T): boolean =>
   haveEqualFields(['year', 'week'], a, b)
 
 export const toWeek = (timestamp: number): Week => {
-  const weekStartedAt = startOfISOWeek(timestamp).getTime()
-
+  const date = new Date(timestamp)
   return {
-    year: getYear(new Date(weekStartedAt)),
-    week: getWeekIndex(weekStartedAt),
+    year: getISOWeekYear(date),
+    week: getISOWeek(date) - 1,
   }
 }
 

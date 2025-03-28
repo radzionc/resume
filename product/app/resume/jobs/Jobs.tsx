@@ -1,15 +1,15 @@
 import { JobExperience } from '@lib/resume-ui/components/JobExperience'
-import { ResumeSection } from '@lib/resume-ui/components/ResumeSection'
-import { IogIcon } from './IogIcon'
-import { TflIcon } from './TflIcon'
-import { ZerionIcon } from './ZerionIcon'
-import { VultisigIcon } from './VultisigIcon'
-
-import { firstJobStartedAt } from '@product/config'
-import { KreoIcon } from './KreoIcon'
-import { KontistIcon } from './KontistIcon'
 import { ProductLink } from '@lib/resume-ui/components/ProductLink'
+import { ResumeSection } from '@lib/resume-ui/components/ResumeSection'
 import { Tech } from '@lib/resume-ui/components/Tech'
+import { firstJobStartedAt } from '@product/config'
+
+import { IogIcon } from './IogIcon'
+import { KontistIcon } from './KontistIcon'
+import { KreoIcon } from './KreoIcon'
+import { TflIcon } from './TflIcon'
+import { VultisigIcon } from './VultisigIcon'
+import { ZerionIcon } from './ZerionIcon'
 
 export const Jobs = () => (
   <>

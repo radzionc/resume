@@ -1,12 +1,18 @@
-import { convertDuration } from './convertDuration'
-import { pluralize } from '../pluralize'
-import { durationUnitName, DurationUnit, durationUnits } from './DurationUnit'
+import { getLastItem } from '../array/getLastItem'
+import { isEmpty } from '../array/isEmpty'
 import { match } from '../match'
 import { padWithZero } from '../padWithZero'
-import { isEmpty } from '../array/isEmpty'
-import { getLastItem } from '../array/getLastItem'
+import { pluralize } from '../pluralize'
 
-type FormatDurationKind = 'short' | 'long' | 'digitalClock'
+import { convertDuration } from './convertDuration'
+import {
+  durationUnitName,
+  DurationUnit,
+  durationUnits,
+  shortDurationUnitName,
+} from './DurationUnit'
+
+type FormatDurationKind = 's' | 'm' | 'l' | 'digitalClock'
 
 interface FormatDurationOptions {
   maxUnit?: DurationUnit
@@ -23,7 +29,7 @@ export const formatDuration = (
     formatDuration(Math.abs(duration), durationUnit, options)
   }
 
-  const kind = options.kind ?? 'short'
+  const kind = options.kind ?? 's'
   const maxUnit = options.maxUnit || 'd'
   const minUnit = options.minUnit || 'min'
 
@@ -68,8 +74,9 @@ export const formatDuration = (
     }
 
     const value = match(kind, {
-      short: () => `${wholeValue}${unit.slice(0, 1)}`,
-      long: () => pluralize(wholeValue, durationUnitName[unit]),
+      s: () => `${wholeValue}${unit.slice(0, 1)}`,
+      m: () => `${wholeValue}${shortDurationUnitName[unit]}`,
+      l: () => pluralize(wholeValue, durationUnitName[unit]),
       digitalClock: () => padWithZero(wholeValue),
     })
 

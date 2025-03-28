@@ -1,10 +1,9 @@
-import { ComponentWithChildrenProps, TitledComponentProps } from '../props'
 import { VStack } from '@lib/ui/css/stack'
+
+import { ChildrenProp, TitleProp } from '../props'
 import { Text } from '../text'
 
-interface AuthViewProps
-  extends ComponentWithChildrenProps,
-    TitledComponentProps {}
+interface AuthViewProps extends ChildrenProp, TitleProp {}
 
 export const AuthView = ({ children, title }: AuthViewProps) => (
   <VStack gap={40}>

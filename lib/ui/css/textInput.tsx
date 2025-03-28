@@ -1,8 +1,10 @@
 import { css } from 'styled-components'
+
 import { getColor } from '../theme/getters'
-import { toSizeUnit } from './toSizeUnit'
+
 import { borderRadius } from './borderRadius'
 import { horizontalPadding } from './horizontalPadding'
+import { toSizeUnit } from './toSizeUnit'
 
 export const textInputHorizontalPadding = 12
 export const textInputHeight = 52
@@ -13,6 +15,21 @@ export const textInputFrame = css`
   width: 100%;
   ${horizontalPadding(textInputHorizontalPadding)};
   ${textInputBorderRadius};
+`
+
+export const interactiveTextInput = css`
+  outline: 1px solid transparent;
+  border: 1px solid ${getColor('mist')};
+
+  &:hover {
+    outline-color: ${getColor('mist')};
+  }
+
+  &:focus,
+  &:active {
+    border-color: ${getColor('mistExtra')};
+    border-color: ${getColor('mistExtra')};
+  }
 `
 
 export const textInput = css`
@@ -26,18 +43,7 @@ export const textInput = css`
     color: ${getColor('textShy')};
   }
 
-  outline: 1px solid transparent;
-  border: 1px solid ${getColor('mist')};
-
-  &:hover {
-    outline-color: ${getColor('mist')};
-  }
-
-  &:focus,
-  &:active {
-    border-color: ${getColor('mistExtra')};
-    border-color: ${getColor('mistExtra')};
-  }
+  ${interactiveTextInput};
 `
 
 type TextInputAutoWidthParams = {

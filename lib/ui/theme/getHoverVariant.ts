@@ -1,6 +1,7 @@
-import { DefaultTheme } from 'styled-components'
-import { ThemeColors } from './ThemeColors'
 import { match } from '@lib/utils/match'
+import { DefaultTheme } from 'styled-components'
+
+import { ThemeColors } from './ThemeColors'
 
 interface ThemeGetterParams {
   theme: DefaultTheme
@@ -8,7 +9,7 @@ interface ThemeGetterParams {
 
 type ColorName = keyof Pick<
   ThemeColors,
-  'foreground' | 'mist' | 'alert' | 'primary'
+  'foreground' | 'mist' | 'alert' | 'primary' | 'text' | 'idle'
 >
 
 export const getHoverVariant =
@@ -19,4 +20,6 @@ export const getHoverVariant =
       mist: () => theme.colors.mistExtra,
       alert: () => theme.colors.alert.getVariant({ l: (l) => l * 0.92 }),
       primary: () => theme.colors.primary.getVariant({ l: (l) => l * 0.92 }),
+      text: () => theme.colors.contrast,
+      idle: () => theme.colors.idle.getVariant({ l: (l) => l * 1.2 }),
     }).toCssValue()

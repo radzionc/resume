@@ -1,18 +1,20 @@
-import React, { forwardRef } from 'react'
+import { match } from '@lib/utils/match'
+import React, { Ref } from 'react'
 import styled, { css } from 'styled-components'
 
-import { UnstyledButton } from './UnstyledButton'
-import { match } from '@lib/utils/match'
+import { MergeRefs } from '../base/MergeRefs'
 import { centerContent } from '../css/centerContent'
 import { horizontalPadding } from '../css/horizontalPadding'
 import { toSizeUnit } from '../css/toSizeUnit'
 import { transition } from '../css/transition'
 import { CenterAbsolutely } from '../layout/CenterAbsolutely'
 import { Spinner } from '../loaders/Spinner'
-import { Tooltip } from '../tooltips/Tooltip'
-import { getColor } from '../theme/getters'
+import { AsProp } from '../props'
 import { getHoverVariant } from '../theme/getHoverVariant'
-import { MergeRefs } from '../base/MergeRefs'
+import { getColor } from '../theme/getters'
+import { Tooltip } from '../tooltips/Tooltip'
+
+import { UnstyledButton } from './UnstyledButton'
 
 export const buttonSizes = ['xs', 's', 'm', 'l', 'xl'] as const
 
@@ -183,70 +185,64 @@ export type ButtonProps = Omit<
   isRounded?: boolean
   kind?: ButtonKind
   onClick?: () => void
-  as?: React.ElementType
-}
+  ref?: Ref<HTMLButtonElement>
+} & AsProp
 
 const Hide = styled.div`
   opacity: 0;
 `
 
-export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  (
-    {
-      children,
-      size = 'm',
-      isDisabled = false,
-      isLoading = false,
-      onClick,
-      kind = 'primary',
-      ...rest
-    },
-    ref,
-  ) => {
-    const content = isLoading ? (
-      <>
-        <Hide>{children}</Hide>
-        <CenterAbsolutely>
-          <Spinner />
-        </CenterAbsolutely>
-      </>
-    ) : (
-      children
-    )
+export function Button({
+  children,
+  size = 'm',
+  isDisabled = false,
+  isLoading = false,
+  onClick,
+  kind = 'primary',
+  ref,
+  ...rest
+}: ButtonProps) {
+  const content = isLoading ? (
+    <>
+      <Hide>{children}</Hide>
+      <CenterAbsolutely>
+        <Spinner />
+      </CenterAbsolutely>
+    </>
+  ) : (
+    children
+  )
 
-    const containerProps = {
-      kind,
-      size,
-      isDisabled: !!isDisabled,
-      isLoading,
-      onClick: isDisabled || isLoading ? undefined : onClick,
-      ...rest,
-    }
+  const containerProps = {
+    kind,
+    size,
+    isDisabled: !!isDisabled,
+    isLoading,
+    onClick: isDisabled || isLoading ? undefined : onClick,
+    ...rest,
+  }
 
-    if (typeof isDisabled === 'string') {
-      return (
-        <Tooltip
-          content={isDisabled}
-          renderOpener={({ ref: tooltipRef, ...rest }) => {
-            return (
-              <MergeRefs
-                refs={[ref, tooltipRef]}
-                render={(ref) => (
-                  <Container ref={ref} {...rest} {...containerProps}>
-                    {content}
-                  </Container>
-                )}
-              />
-            )
-          }}
-        />
-      )
-    }
-
+  if (typeof isDisabled === 'string') {
     return (
-      <Container ref={ref} {...containerProps}>
-        {content}
-      </Container>
+      <Tooltip
+        content={isDisabled}
+        renderOpener={({ ref: tooltipRef, ...tooltipRest }) => (
+          <MergeRefs
+            refs={[ref, tooltipRef]}
+            render={(ref) => (
+              <Container ref={ref} {...containerProps} {...tooltipRest}>
+                {content}
+              </Container>
+            )}
+          />
+        )}
+      />
     )
-  },
-)
+  }
+
+  return (
+    <Container ref={ref} {...containerProps}>
+      {content}
+    </Container>
+  )
+}

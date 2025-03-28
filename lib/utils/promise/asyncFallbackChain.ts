@@ -1,14 +1,22 @@
+import { isEmpty } from '../array/isEmpty'
+import { attempt } from '../attempt'
+
 export const asyncFallbackChain = async <T>(
   ...functions: (() => Promise<T>)[]
 ): Promise<T> => {
-  try {
-    const result = await functions[0]()
-    return result
-  } catch (error) {
-    if (functions.length === 1) {
+  if (isEmpty(functions)) {
+    throw new Error('No functions provided')
+  }
+
+  const { data, error } = await attempt(functions[0]())
+
+  if (error) {
+    if (functions.length <= 1) {
       throw error
     }
 
     return asyncFallbackChain(...functions.slice(1))
   }
+
+  return data as T
 }

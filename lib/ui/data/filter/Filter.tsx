@@ -1,20 +1,26 @@
-import { useFloatingOptions } from '@lib/ui/floating/useFloatingOptions'
-import { HStack, vStack, VStack } from '@lib/ui/css/stack'
 import { FloatingFocusManager } from '@floating-ui/react'
-import { TitledFloatingOptionsContainer } from '@lib/ui/floating/TitledFloatingOptionsContainer'
-import { OptionItem } from '@lib/ui/select/OptionItem'
-import { OptionContent } from '@lib/ui/select/OptionContent'
 import { Button } from '@lib/ui/buttons/Button'
-import { ComponentWithActiveState, InputProps } from '@lib/ui/props'
-import { getColor } from '@lib/ui/theme/getters'
-import styled, { css } from 'styled-components'
 import { UnstyledButton } from '@lib/ui/buttons/UnstyledButton'
 import { WithSecondaryAction } from '@lib/ui/buttons/WithSecondaryAction'
+import { HStack, vStack, VStack } from '@lib/ui/css/stack'
+import { TitledFloatingOptionsContainer } from '@lib/ui/floating/TitledFloatingOptionsContainer'
+import { useFloatingOptions } from '@lib/ui/floating/useFloatingOptions'
 import { CloseIcon } from '@lib/ui/icons/CloseIcon'
+import {
+  IsActiveProp,
+  InputProps,
+  ItemsProp,
+  RenderItemProp,
+} from '@lib/ui/props'
+import { OptionContent } from '@lib/ui/select/OptionContent'
+import { OptionItem } from '@lib/ui/select/OptionItem'
+import { getColor } from '@lib/ui/theme/getters'
+import styled, { css } from 'styled-components'
+
 import { IconWrapper } from '../../icons/IconWrapper'
 import { ListFilterIcon } from '../../icons/ListFilterIcon'
 
-const Opener = styled(Button)<ComponentWithActiveState>`
+const Opener = styled(Button)<IsActiveProp>`
   border: 1px solid transparent;
   outline: none;
   ${({ isActive }) =>
@@ -24,7 +30,7 @@ const Opener = styled(Button)<ComponentWithActiveState>`
     `}
 `
 
-const Content = styled(UnstyledButton)<ComponentWithActiveState>`
+const Content = styled(UnstyledButton)<IsActiveProp>`
   ${vStack({
     justifyContent: 'center',
   })}
@@ -38,12 +44,12 @@ const Content = styled(UnstyledButton)<ComponentWithActiveState>`
     `}
 `
 
-type FilterProps<T> = InputProps<T | null> & {
-  items: readonly T[]
-  getItemKey: (item: T) => string
-  renderItem: (item: T) => React.ReactNode
-  title: string
-}
+type FilterProps<T> = InputProps<T | null> &
+  ItemsProp<T> &
+  RenderItemProp<T> & {
+    getItemKey: (item: T) => string
+    title: string
+  }
 
 export function Filter<T>({
   items,

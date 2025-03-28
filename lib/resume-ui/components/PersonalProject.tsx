@@ -1,10 +1,11 @@
-import { ExternalLink } from '@lib/ui/navigation/Link/ExternalLink'
 import { HStack, VStack } from '@lib/ui/css/stack'
+import { toSizeUnit } from '@lib/ui/css/toSizeUnit'
+import { ExternalLink } from '@lib/ui/navigation/Link/ExternalLink'
 import { text, Text } from '@lib/ui/text'
-import styled from 'styled-components'
 import { getColor } from '@lib/ui/theme/getters'
 import { ReactNode } from 'react'
-import { toSizeUnit } from '@lib/ui/css/toSizeUnit'
+import styled from 'styled-components'
+
 import { resumeConfig } from './config'
 
 interface Props {

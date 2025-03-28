@@ -1,10 +1,11 @@
+import { HStack } from '@lib/ui/css/stack'
 import { ReactNode } from 'react'
 
-import { HStack } from '@lib/ui/css/stack'
-import { Text, TextColor } from '.'
-import { UIComponentProps } from '../props'
+import { UiProps } from '../props'
 
-type Props = UIComponentProps & {
+import { Text, TextColor } from '.'
+
+type Props = UiProps & {
   name: ReactNode
   children: ReactNode
   labelColor?: TextColor

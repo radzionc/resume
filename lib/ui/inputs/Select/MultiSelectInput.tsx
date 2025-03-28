@@ -1,15 +1,17 @@
-import React, { ReactNode } from 'react'
-import { InvisibleHTMLCheckbox } from '../InvisibleHTMLCheckbox'
 import { HStack } from '@lib/ui/css/stack'
-import { InputProps, UIComponentProps } from '../../props'
+import React, { ReactNode } from 'react'
 import { useId } from 'react'
+
+import { InputProps, UiProps } from '../../props'
 import { InputContainer } from '../InputContainer'
 import { InputLabel } from '../InputLabel'
+import { InvisibleHTMLCheckbox } from '../InvisibleHTMLCheckbox'
+
 import { SelectOption } from './SelectOption'
 
 interface MultiSelectInputProps<T extends string>
   extends InputProps<T[]>,
-    UIComponentProps {
+    UiProps {
   options: readonly T[]
   renderOption: (option: T) => React.ReactNode
   isOptionDisabled?: (option: T) => string | false

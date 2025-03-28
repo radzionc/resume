@@ -1,7 +1,8 @@
 import { ReactNode } from 'react'
-import { ComponentWithValueProps } from '../props'
 
-type NonEmptyOnlyProps<T> = Partial<ComponentWithValueProps<T[]>> & {
+import { ValueProp } from '../props'
+
+type NonEmptyOnlyProps<T> = Partial<ValueProp<T[]>> & {
   render: (array: T[]) => ReactNode
 }
 

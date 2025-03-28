@@ -1,17 +1,16 @@
 import styled, { css } from 'styled-components'
-import { getColor } from '../theme/getters'
+
 import { UnstyledButton } from '../buttons/UnstyledButton'
 import { borderRadius } from '../css/borderRadius'
 import { centerContent } from '../css/centerContent'
 import { sameDimensions } from '../css/sameDimensions'
-import { transition } from '../css/transition'
-import { ComponentWithActiveState } from '../props'
-import { getHoverVariant } from '../theme/getHoverVariant'
 import { textInputHeight } from '../css/textInput'
+import { transition } from '../css/transition'
+import { IsActiveProp } from '../props'
+import { getHoverVariant } from '../theme/getHoverVariant'
+import { getColor } from '../theme/getters'
 
-export const ExpandableInputOpener = styled(
-  UnstyledButton,
-)<ComponentWithActiveState>`
+export const ExpandableInputOpener = styled(UnstyledButton)<IsActiveProp>`
   ${centerContent}
   ${borderRadius.m}
   ${transition}

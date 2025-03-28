@@ -1,13 +1,16 @@
-import React, { ComponentPropsWithoutRef, ElementType, forwardRef } from 'react'
+import React, { ComponentPropsWithoutRef, ElementType } from 'react'
+import FocusLock from 'react-focus-lock'
 import styled, { css } from 'styled-components'
-import { getColor } from '../theme/getters'
-import { takeWholeSpace } from '../css/takeWholeSpace'
-import { toSizeUnit } from '../css/toSizeUnit'
+
 import { borderRadius } from '../css/borderRadius'
 import { vStack } from '../css/stack'
+import { takeWholeSpace } from '../css/takeWholeSpace'
+import { toSizeUnit } from '../css/toSizeUnit'
 import { useIsScreenWidthLessThan } from '../hooks/useIsScreenWidthLessThan'
+import { AsProp } from '../props'
+import { getColor } from '../theme/getters'
+
 import { modalConfig } from './config'
-import FocusLock from 'react-focus-lock'
 
 export type ModalPlacement = 'top' | 'center'
 
@@ -38,29 +41,25 @@ const Container = styled(FocusLock)<ContainerProps>`
         `
       : takeWholeSpace};
 
-  border: 2px solid ${getColor('textShy')};
+  border: 2px solid ${getColor('mistExtra')};
   overflow: hidden;
 `
+
 type ModalContainerProps = {
   targetWidth?: number
   placement?: ModalPlacement
-  as?: ElementType
 } & Omit<
   ComponentPropsWithoutRef<ElementType>,
   keyof ContainerProps | 'as' | 'width' | 'placement'
->
+> &
+  AsProp
 
-type PolymorphicRef = React.Ref<unknown>
-
-export const ModalContainer = forwardRef(function ModalContainerInner(
-  {
-    targetWidth = 400,
-    placement = 'center',
-    as,
-    ...props
-  }: ModalContainerProps,
-  ref: PolymorphicRef,
-) {
+export function ModalContainer({
+  targetWidth = 400,
+  placement = 'center',
+  as,
+  ...props
+}: ModalContainerProps) {
   const isFullScreen = useIsScreenWidthLessThan(
     targetWidth + modalConfig.minHorizontalFreeSpaceForMist,
   )
@@ -69,10 +68,9 @@ export const ModalContainer = forwardRef(function ModalContainerInner(
     <Container
       returnFocus
       as={as}
-      ref={ref}
       width={isFullScreen ? undefined : targetWidth}
       placement={placement}
       {...props}
     />
   )
-})
+}

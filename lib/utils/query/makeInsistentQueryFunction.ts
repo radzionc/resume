@@ -1,5 +1,7 @@
-import { couldBeTooManyRequestsError } from './couldBeTooManyRequestsError'
+import { attempt } from '../attempt'
 import { sleep } from '../sleep'
+
+import { couldBeTooManyRequestsError } from './couldBeTooManyRequestsError'
 
 type QueryFunction = (...args: any[]) => Promise<any>
 
@@ -27,12 +29,9 @@ export const makeInsistentQueryFunction = <V extends QueryFunction>({
       return insistentQuery(...args)
     }
 
-    try {
-      const result = query(...args)
-      retryAttempt = 0
+    const { data, error } = await attempt(query(...args))
 
-      return result
-    } catch (error) {
+    if (error) {
       disableRequestsUntil = Date.now() + delay
       retryAttempt += 1
 
@@ -42,6 +41,10 @@ export const makeInsistentQueryFunction = <V extends QueryFunction>({
 
       throw error
     }
+
+    retryAttempt = 0
+
+    return data
   }) as V
 
   return insistentQuery

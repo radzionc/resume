@@ -1,10 +1,11 @@
 import React, { ComponentProps, useRef } from 'react'
 import styled from 'styled-components'
-import { takeWholeSpace } from '../css/takeWholeSpace'
+
 import { centerContent } from '../css/centerContent'
-import { getColor } from '../theme/getters'
-import { ClosableComponentProps } from '../props'
+import { takeWholeSpace } from '../css/takeWholeSpace'
 import { useKeyDown } from '../hooks/useKeyDown'
+import { OnCloseProp } from '../props'
+import { getColor } from '../theme/getters'
 
 const Container = styled.div`
   z-index: 1;
@@ -20,7 +21,7 @@ const Container = styled.div`
 export const Backdrop = ({
   onClose,
   ...props
-}: Partial<ClosableComponentProps> & ComponentProps<typeof Container>) => {
+}: Partial<OnCloseProp> & ComponentProps<typeof Container>) => {
   const isPointerDownInside = useRef(false)
   useKeyDown('Escape', onClose)
 

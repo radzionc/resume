@@ -1,11 +1,11 @@
+import { attempt, withFallback } from '@lib/utils/attempt'
+import { asyncFallbackChain } from '@lib/utils/promise/asyncFallbackChain'
+import { joinPaths } from '@lib/utils/query/joinPaths'
 import { ApiError } from '@product/api-interface/ApiError'
 import {
   ApiMethodName,
   ApiInterface,
 } from '@product/api-interface/ApiInterface'
-import { asyncFallbackChain } from '@lib/utils/promise/asyncFallbackChain'
-import { joinPaths } from '@lib/utils/query/joinPaths'
-import { safeResolve } from '@lib/utils/promise/safeResolve'
 
 interface CallApiParams<M extends ApiMethodName> {
   baseUrl: string
@@ -54,5 +54,5 @@ export const callApi = async <M extends ApiMethodName>({
     throw error
   }
 
-  return safeResolve(response.json(), undefined)
+  return withFallback(attempt(response.json()), undefined)
 }

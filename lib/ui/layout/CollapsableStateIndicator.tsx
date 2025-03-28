@@ -1,18 +1,15 @@
+import { ComponentProps } from 'react'
 import styled from 'styled-components'
-import { UIComponentProps } from '../props'
-import { IconWrapper } from '../icons/IconWrapper'
-import { ChevronDownIcon } from '../icons/ChevronDownIcon'
 
-type CollapsableStateIndicatorProps = UIComponentProps & {
-  isOpen: boolean
-}
+import { ChevronDownIcon } from '../icons/ChevronDownIcon'
+import { IconWrapper } from '../icons/IconWrapper'
 
 const Container = styled(IconWrapper)<{ isOpen: boolean }>`
   transform: rotateZ(${({ isOpen }) => (isOpen ? '-180deg' : '0deg')});
 `
 
 export const CollapsableStateIndicator = (
-  props: CollapsableStateIndicatorProps,
+  props: Omit<ComponentProps<typeof Container>, 'children'>,
 ) => (
   <Container {...props}>
     <ChevronDownIcon />

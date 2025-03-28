@@ -1,21 +1,25 @@
-import { HStack, VStack } from '@lib/ui/css/stack'
-import { Text } from '@lib/ui/text'
-import { Tag } from '@lib/ui/tags/Tag'
-import { useTheme } from 'styled-components'
-import { ComponentProps, useRef } from 'react'
-import { ResumeContainer } from '@lib/resume-ui/components/ResumeContainer'
 import { DownloadResume } from '@lib/resume-ui/components/DownloadResume'
-import { differenceInYears } from 'date-fns'
+import { ResumeContainer } from '@lib/resume-ui/components/ResumeContainer'
+import { HStack, VStack } from '@lib/ui/css/stack'
 import { useRhythmicRerender } from '@lib/ui/hooks/useRhythmicRerender'
+import { Tag } from '@lib/ui/tags/Tag'
+import { Text } from '@lib/ui/text'
 import { convertDuration } from '@lib/utils/time/convertDuration'
 import { firstJobStartedAt } from '@product/config'
+import { differenceInYears } from 'date-fns'
+import { ComponentProps, useRef } from 'react'
+import { useReactToPrint } from 'react-to-print'
+import { useTheme } from 'styled-components'
+
+import { Contacts } from './Contacts'
 import { Jobs } from './jobs/Jobs'
 import { Projects } from './projects/Projects'
-import { Contacts } from './Contacts'
 
 export const Resume = (props: ComponentProps<typeof ResumeContainer>) => {
   const { colors } = useTheme()
+
   const containerElement = useRef<HTMLDivElement>(null)
+  const print = useReactToPrint({ contentRef: containerElement })
 
   const now = useRhythmicRerender(convertDuration(10, 'min', 'ms'))
 
@@ -25,7 +29,7 @@ export const Resume = (props: ComponentProps<typeof ResumeContainer>) => {
         <VStack gap={8}>
           <HStack wrap="wrap" alignItems="center" gap={8}>
             <Text size={20} color="contrast" weight="600">
-              Radzion
+              Radzion Chachura
             </Text>
             <Tag $color={colors.getLabelColor(5)}>
               {differenceInYears(now, firstJobStartedAt)}+ years exp
@@ -42,7 +46,7 @@ export const Resume = (props: ComponentProps<typeof ResumeContainer>) => {
             </Text>
           </HStack>
         </VStack>
-        <DownloadResume render={() => containerElement.current} />
+        <DownloadResume onClick={print} />
       </HStack>
       <Jobs />
       <Projects />

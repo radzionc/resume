@@ -1,17 +1,18 @@
+import { Dimensions } from '@lib/utils/entities/Dimensions'
 import { ReactNode } from 'react'
 import styled from 'styled-components'
 
+import { ActionProp, UiProps } from '../props'
+
 import { ElementSizeAware } from './ElementSizeAware'
-import { ComponentWithActionProps, UIComponentProps } from '../props'
-import { Dimensions } from '@lib/utils/entities/Dimensions'
 
 interface OnHoverActionRenderParams<T extends React.CSSProperties> {
   actionSize: Dimensions | null
   actionPlacerStyles: T
 }
 
-type OnHoverActionProps<T extends React.CSSProperties> = UIComponentProps &
-  ComponentWithActionProps & {
+type OnHoverActionProps<T extends React.CSSProperties> = UiProps &
+  ActionProp & {
     render: (params: OnHoverActionRenderParams<T>) => ReactNode
     actionPlacerStyles: T
   }

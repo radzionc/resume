@@ -1,6 +1,7 @@
-import { useQuery } from '@tanstack/react-query'
-import { GithubRepo } from '../GithubRepo'
 import { queryUrl } from '@lib/utils/query/queryUrl'
+import { useQuery } from '@tanstack/react-query'
+
+import { GithubRepo } from '../GithubRepo'
 
 interface GitHubRepoResponse {
   stargazers_count: number

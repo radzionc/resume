@@ -1,13 +1,14 @@
 import styled, { css } from 'styled-components'
-import { interactive } from '../css/interactive'
-import { getColor } from '../theme/getters'
-import { getHoverVariant } from '../theme/getHoverVariant'
-import { SelectContainer } from './SelectContainer'
-import { ExpandableSelectorToggle } from './ExpandableSelectorToggle'
-import { ComponentWithActiveState, ComponentWithDisabledState } from '../props'
 
-type ExpandableSelectorContainerProps = ComponentWithActiveState &
-  ComponentWithDisabledState
+import { interactive } from '../css/interactive'
+import { IsActiveProp, IsDisabledProp } from '../props'
+import { getHoverVariant } from '../theme/getHoverVariant'
+import { getColor } from '../theme/getters'
+
+import { ExpandableSelectorToggle } from './ExpandableSelectorToggle'
+import { SelectContainer } from './SelectContainer'
+
+type ExpandableSelectorContainerProps = IsActiveProp & IsDisabledProp
 
 export const ExpandableSelectorContainer = styled(
   SelectContainer,

@@ -1,23 +1,25 @@
-import styled, { css } from 'styled-components'
-import { centerContent } from '../css/centerContent'
-import { getColor } from '../theme/getters'
-import { CheckIcon } from '../icons/CheckIcon'
-import { ComponentWithChildrenProps, UIComponentProps } from '../props'
 import React from 'react'
-import { interactive } from '../css/interactive'
-import { IconWrapper } from '../icons/IconWrapper'
+import styled, { css } from 'styled-components'
 
-type CheckStatusProps = UIComponentProps & {
+import { centerContent } from '../css/centerContent'
+import { interactive } from '../css/interactive'
+import { CheckIcon } from '../icons/CheckIcon'
+import { IconWrapper } from '../icons/IconWrapper'
+import { AsProp, ChildrenProp, UiProps } from '../props'
+import { getColor } from '../theme/getters'
+
+type CheckStatusProps = UiProps & {
   value: boolean
-  as?: React.ElementType
   isInteractive?: boolean
-} & Partial<ComponentWithChildrenProps>
+} & Partial<ChildrenProp> &
+  AsProp
 
 const IconContainer = styled(IconWrapper)``
 
 const Container = styled.div<{ isChecked: boolean; isInteractive?: boolean }>`
   width: 100%;
   aspect-ratio: 1/1;
+  position: relative;
 
   ${centerContent};
 

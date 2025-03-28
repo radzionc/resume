@@ -1,25 +1,22 @@
-import { ReactNode } from 'react'
-import { PositionAbsolutelyCenterHorizontally } from '../layout/PositionAbsolutelyCenterHorizontally'
 import { toPercents } from '@lib/utils/toPercents'
+import { ReactNode } from 'react'
+import styled from 'styled-components'
 
-type ChartYAxisProps = {
+import { PositionAbsolutelyCenterHorizontally } from '../layout/PositionAbsolutelyCenterHorizontally'
+import { UiProps } from '../props'
+
+type ChartYAxisProps = UiProps & {
   data: number[]
   renderLabel: (index: number) => ReactNode
-  expectedLabelWidth: number
 }
 
-export const ChartYAxis = ({
-  data,
-  expectedLabelWidth,
-  renderLabel,
-}: ChartYAxisProps) => {
+const Container = styled.div`
+  position: relative;
+`
+
+export const ChartYAxis = ({ data, renderLabel, ...rest }: ChartYAxisProps) => {
   return (
-    <div
-      style={{
-        minWidth: expectedLabelWidth,
-        position: 'relative',
-      }}
-    >
+    <Container {...rest}>
       {data.map((value, index) => {
         return (
           <PositionAbsolutelyCenterHorizontally
@@ -30,6 +27,6 @@ export const ChartYAxis = ({
           </PositionAbsolutelyCenterHorizontally>
         )
       })}
-    </div>
+    </Container>
   )
 }

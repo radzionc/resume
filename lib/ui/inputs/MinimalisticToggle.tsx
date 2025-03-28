@@ -1,20 +1,17 @@
-import { HStack } from '@lib/ui/css/stack'
-import { Text } from '@lib/ui/text'
-import styled, { css } from 'styled-components'
-import { round } from '@lib/ui/css/round'
-import { getColor } from '@lib/ui/theme/getters'
-import { sameDimensions } from '@lib/ui/css/sameDimensions'
 import { centerContent } from '@lib/ui/css/centerContent'
+import { round } from '@lib/ui/css/round'
+import { sameDimensions } from '@lib/ui/css/sameDimensions'
+import { HStack } from '@lib/ui/css/stack'
 import { transition } from '@lib/ui/css/transition'
-import {
-  ComponentWithActiveState,
-  InputProps,
-  LabeledComponentProps,
-  UIComponentProps,
-} from '../props'
-import { verticalPadding } from '../css/verticalPadding'
-import { InvisibleHTMLCheckbox } from './InvisibleHTMLCheckbox'
+import { Text } from '@lib/ui/text'
+import { getColor } from '@lib/ui/theme/getters'
+import styled, { css } from 'styled-components'
+
 import { interactive } from '../css/interactive'
+import { verticalPadding } from '../css/verticalPadding'
+import { IsActiveProp, InputProps, LabelProp, UiProps } from '../props'
+
+import { InvisibleHTMLCheckbox } from './InvisibleHTMLCheckbox'
 
 const CheckContainer = styled.div`
   ${round};
@@ -25,7 +22,7 @@ const CheckContainer = styled.div`
   ${transition};
 `
 
-const Container = styled.label<ComponentWithActiveState>`
+const Container = styled.label<IsActiveProp>`
   ${transition};
   ${verticalPadding(4)}
   ${interactive};
@@ -49,9 +46,7 @@ const Check = styled.div`
   ${centerContent}
 `
 
-type MinimalisticToggleProps = InputProps<boolean> &
-  LabeledComponentProps &
-  UIComponentProps
+type MinimalisticToggleProps = InputProps<boolean> & LabelProp & UiProps
 
 export const MinimalisticToggle = ({
   value,

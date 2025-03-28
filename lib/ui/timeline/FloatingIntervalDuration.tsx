@@ -1,16 +1,16 @@
-import styled from 'styled-components'
 import { VStack } from '@lib/ui/css/stack'
-import { getColor } from '../theme/getters'
-import { ComponentWithValueProps, UIComponentProps } from '../props'
-import { HStackSeparatedBy, dotSeparator } from '../layout/StackSeparatedBy'
-import { Text } from '../text'
-import { formatTime } from '@lib/utils/time/formatTime'
+import { getIntervalDuration } from '@lib/utils/interval/getIntervalDuration'
 import { Interval } from '@lib/utils/interval/Interval'
 import { formatDuration } from '@lib/utils/time/formatDuration'
-import { getIntervalDuration } from '@lib/utils/interval/getIntervalDuration'
+import { formatTime } from '@lib/utils/time/formatTime'
+import styled from 'styled-components'
 
-export type FloatingIntervalDurationProps = UIComponentProps &
-  ComponentWithValueProps<Interval>
+import { HStackSeparatedBy, dotSeparator } from '../layout/StackSeparatedBy'
+import { ValueProp, UiProps } from '../props'
+import { Text } from '../text'
+import { getColor } from '../theme/getters'
+
+export type FloatingIntervalDurationProps = UiProps & ValueProp<Interval>
 
 const Container = styled(VStack)`
   position: absolute;
@@ -32,7 +32,7 @@ export const FloatingIntervalDuration = ({
         {formatTime(value.start)} - {formatTime(value.end)}
       </Text>
       <Text nowrap>
-        {formatDuration(getIntervalDuration(value), 'ms', { kind: 'long' })}
+        {formatDuration(getIntervalDuration(value), 'ms', { kind: 'l' })}
       </Text>
     </HStackSeparatedBy>
   </Container>

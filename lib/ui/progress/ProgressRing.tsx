@@ -1,15 +1,12 @@
 import React, { SVGProps } from 'react'
-import {
-  ColoredComponentProps,
-  ComponentWithValueProps,
-  SizedComponentProps,
-} from '../props'
 import styled from 'styled-components'
+
+import { ColorProp, ValueProp, SizeProp } from '../props'
 import { getColor } from '../theme/getters'
 
-type ProgressRingProps = ComponentWithValueProps<number> &
-  ColoredComponentProps &
-  SizedComponentProps & {
+type ProgressRingProps = ValueProp<number> &
+  ColorProp &
+  SizeProp & {
     thickness: number
   } & Omit<SVGProps<SVGSVGElement>, 'color'>
 

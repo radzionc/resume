@@ -2,22 +2,18 @@ import { centerContent } from '@lib/ui/css/centerContent'
 import { interactive } from '@lib/ui/css/interactive'
 import { round } from '@lib/ui/css/round'
 import { sameDimensions } from '@lib/ui/css/sameDimensions'
+import { HStack, VStack } from '@lib/ui/css/stack'
 import { toSizeUnit } from '@lib/ui/css/toSizeUnit'
 import { transition } from '@lib/ui/css/transition'
 import { useBoolean } from '@lib/ui/hooks/useBoolean'
 import { CollapsableStateIndicator } from '@lib/ui/layout/CollapsableStateIndicator'
-import { HStack, VStack } from '@lib/ui/css/stack'
-import {
-  ComponentWithActiveState,
-  ComponentWithChildrenProps,
-  TitledComponentProps,
-} from '@lib/ui/props'
+import { IsActiveProp, ChildrenProp, TitleProp } from '@lib/ui/props'
 import { Text } from '@lib/ui/text'
 import { getColor, matchColor } from '@lib/ui/theme/getters'
 import styled, { css } from 'styled-components'
 
-type ColumnFlowSectionProps = ComponentWithChildrenProps &
-  TitledComponentProps & {
+type ColumnFlowSectionProps = ChildrenProp &
+  TitleProp & {
     isCompleted: boolean
     index: number
   }
@@ -25,7 +21,7 @@ type ColumnFlowSectionProps = ComponentWithChildrenProps &
 const paddingLeft = 32
 const indexSize = 28
 
-const Container = styled(VStack)<ComponentWithActiveState>`
+const Container = styled(VStack)<IsActiveProp>`
   border-left: 1px solid
     ${matchColor('isActive', {
       true: 'success',
@@ -37,7 +33,7 @@ const Container = styled(VStack)<ComponentWithActiveState>`
   }
 `
 
-const Index = styled.div<ComponentWithActiveState>`
+const Index = styled.div<IsActiveProp>`
   ${centerContent};
   ${sameDimensions(indexSize)};
   ${round}

@@ -1,13 +1,9 @@
-import styled from 'styled-components'
-import ReactToPrint from 'react-to-print'
-import { DownloadIcon } from '@lib/ui/icons/DonwloadIcon'
 import { Button } from '@lib/ui/buttons/Button'
 import { HStack } from '@lib/ui/css/stack'
+import { DownloadIcon } from '@lib/ui/icons/DonwloadIcon'
+import { OnClickProp } from '@lib/ui/props'
 import { Text } from '@lib/ui/text'
-
-type DownloadResumeProps = {
-  render: () => React.ReactInstance | null
-}
+import styled from 'styled-components'
 
 const Container = styled(Button)`
   @media print {
@@ -19,16 +15,13 @@ const Container = styled(Button)`
   }
 `
 
-export const DownloadResume = ({ render }: DownloadResumeProps) => (
-  <ReactToPrint
-    trigger={() => (
-      <Container size="s" kind="primary">
-        <HStack alignItems="center" gap={8}>
-          <DownloadIcon />
-          <Text>Download</Text>
-        </HStack>
-      </Container>
-    )}
-    content={render}
-  />
-)
+export const DownloadResume = ({ onClick }: OnClickProp) => {
+  return (
+    <Container size="s" kind="primary" onClick={onClick}>
+      <HStack alignItems="center" gap={8}>
+        <DownloadIcon />
+        <Text>Download</Text>
+      </HStack>
+    </Container>
+  )
+}

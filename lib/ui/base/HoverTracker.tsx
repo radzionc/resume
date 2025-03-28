@@ -1,3 +1,5 @@
+import { useIsomorphicLayoutEffect } from '@lib/ui/hooks/useIsomorphicLayoutEffect'
+import { Point } from '@lib/utils/entities/Point'
 import {
   MouseEvent,
   MouseEventHandler,
@@ -5,9 +7,8 @@ import {
   useCallback,
   useState,
 } from 'react'
-import { Point } from '../entities/Point'
+
 import { useBoundingBox } from '../hooks/useBoundingBox'
-import { useIsomorphicLayoutEffect } from '@lib/ui/hooks/useIsomorphicLayoutEffect'
 import { useRelativePosition } from '../hooks/useRelativePosition'
 
 interface ContainerProps {

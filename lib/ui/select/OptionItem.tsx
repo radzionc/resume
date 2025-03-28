@@ -1,10 +1,11 @@
 import styled, { css } from 'styled-components'
-import { ComponentWithActiveState } from '../props'
+
 import { borderRadius } from '../css/borderRadius'
 import { interactive } from '../css/interactive'
+import { IsActiveProp } from '../props'
 import { getColor } from '../theme/getters'
 
-export const OptionItem = styled.div<ComponentWithActiveState>`
+export const OptionItem = styled.div<IsActiveProp>`
   outline: none;
   ${interactive};
   color: ${getColor('textSupporting')};

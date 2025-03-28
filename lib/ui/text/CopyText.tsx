@@ -1,20 +1,21 @@
-import { CopyIcon } from '../icons/CopyIcon'
-import styled from 'styled-components'
-import { getColor, matchColor } from '../theme/getters'
 import { useState } from 'react'
-import { CheckIcon } from '../icons/CheckIcon'
-import { Text, TextProps } from '../text'
+import styled from 'styled-components'
+
 import { Match } from '../base/Match'
 import { transition } from '../css/transition'
-import { ComponentWithChildrenProps, UIComponentProps } from '../props'
+import { CheckIcon } from '../icons/CheckIcon'
+import { CopyIcon } from '../icons/CopyIcon'
+import { ChildrenProp, UiProps } from '../props'
+import { Text, TextProps } from '../text'
+import { getColor, matchColor } from '../theme/getters'
 import { copyTextToClipboard } from '../utils/copyTextToClipboard'
 
 type CopyTextProps = {
   content: string
   isIconAlwaysVisible?: boolean
-} & ComponentWithChildrenProps &
+} & ChildrenProp &
   TextProps &
-  UIComponentProps
+  UiProps
 
 const IconWr = styled(Text)<{ isIconAlwaysVisible: boolean }>`
   margin-left: 4px;

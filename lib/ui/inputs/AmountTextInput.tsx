@@ -1,10 +1,11 @@
-import { Ref, forwardRef, ReactNode, useState } from 'react'
+import { HStack } from '@lib/ui/css/stack'
+import { ReactNode, useState } from 'react'
 import styled from 'styled-components'
 
-import { TextInput, TextInputProps } from './TextInput'
-import { centerContent } from '../css/centerContent'
-import { HStack } from '@lib/ui/css/stack'
 import { borderRadius } from '../css/borderRadius'
+import { centerContent } from '../css/centerContent'
+
+import { TextInput, TextInputProps } from './TextInput'
 
 type AmountTextInputProps = Omit<TextInputProps, 'value' | 'onValueChange'> & {
   value: number | null
@@ -23,21 +24,18 @@ const UnitContainer = styled.div`
   ${centerContent};
 `
 
-export const AmountTextInput = forwardRef(function AmountInputInner(
-  {
-    onValueChange,
-    unit,
-    value,
-    shouldBePositive,
-    shouldBeInteger,
-    suggestion,
-    label,
-    placeholder,
-    type = 'number',
-    ...props
-  }: AmountTextInputProps,
-  ref: Ref<HTMLInputElement> | null,
-) {
+export function AmountTextInput({
+  onValueChange,
+  unit,
+  value,
+  shouldBePositive,
+  shouldBeInteger,
+  suggestion,
+  label,
+  placeholder,
+  type = 'number',
+  ...props
+}: AmountTextInputProps) {
   const valueAsString = value?.toString() ?? ''
   const [inputValue, setInputValue] = useState<string>(valueAsString)
 
@@ -66,7 +64,6 @@ export const AmountTextInput = forwardRef(function AmountInputInner(
           ? inputValue
           : valueAsString
       }
-      ref={ref}
       inputOverlay={unit ? <UnitContainer>{unit}</UnitContainer> : undefined}
       onValueChange={(value: string) => {
         if (shouldBePositive) {
@@ -92,4 +89,4 @@ export const AmountTextInput = forwardRef(function AmountInputInner(
       }}
     />
   )
-})
+}

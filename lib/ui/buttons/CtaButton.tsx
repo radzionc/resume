@@ -1,13 +1,14 @@
 // based on https://www.joshwcomeau.com/animation/3d-button/
 import { ComponentProps } from 'react'
-
 import styled from 'styled-components'
-import { UnstyledButton } from './UnstyledButton'
-import { takeWholeSpaceAbsolutely } from '../css/takeWholeSpaceAbsolutely'
+
 import { borderRadius } from '../css/borderRadius'
-import { AsElementComponent } from '../props'
-import { getColor } from '../theme/getters'
 import { centerContent } from '../css/centerContent'
+import { takeWholeSpaceAbsolutely } from '../css/takeWholeSpaceAbsolutely'
+import { AsProp } from '../props'
+import { getColor } from '../theme/getters'
+
+import { UnstyledButton } from './UnstyledButton'
 
 const ctaButtonBorderRadius = borderRadius.m
 
@@ -78,9 +79,10 @@ const Front = styled.span`
   }
 `
 
-export const CtaButton: React.FC<
-  ComponentProps<typeof Container> & AsElementComponent
-> = ({ children, ...rest }) => (
+export const CtaButton: React.FC<ComponentProps<typeof Container> & AsProp> = ({
+  children,
+  ...rest
+}) => (
   <Container {...rest}>
     <Shadow />
     <Edge />

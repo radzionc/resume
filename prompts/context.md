@@ -1,8 +1,10 @@
-You will be helping me with tasks related to job search. Read more about my experience below and reply "Yes" if you understand everything.
-
 # Radzion Chachura
 
 Based in Georgia (country), I am seeking a front-end position in web3 and am also open to full-stack roles.
+
+# Salary Expectations
+
+I target a salary of $150k per year. The minimum I would accept is $120k.
 
 ## Job Experience
 
@@ -44,11 +46,11 @@ Increaser is a productivity toolkit developed specifically for knowledge workers
 
 ### RadzionKit ([github.com/radzionc/radzionkit](https://github.com/radzionc/radzionkit))
 
-RadzionKit is a versatile full-stack development toolkit designed to streamline and enhance coding projects with a suite of integrated, easy-to-use packages. It's structured as a TypeScript monorepo and designed for a stack with React (optional Next.js), Node.js, DynamoDB, and Terraform (AWS). Most of the code is for the front-end and contains a lot of reusable components, hooks, and utilities built without depending on any UI library. The project has more than 200 stars on GitHub.
+RadzionKit is a versatile full-stack development toolkit designed to streamline and enhance coding projects with a suite of integrated, easy-to-use packages. It's structured as a TypeScript monorepo and designed for a stack with React (optional Next.js), Node.js, DynamoDB, and Terraform (AWS). Most of the code is for the front-end and contains a lot of reusable components, hooks, and utilities built without depending on any UI library. The project has more than 250 stars on GitHub.
 
 ### Radzion Dev ([youtube.com/c/radzion](https://www.youtube.com/c/radzion))
 
-I have a YouTube channel about software development with a focus on web development, and front-end specifically. It covers React, TypeScript, Node.js, AWS, and working within a monorepo.
+I have a YouTube channel with 2,000 subscribers that focuses on software development, particularly in web development and front-end technologies. The channel covers topics such as React, TypeScript, Node.js, AWS, and working within a monorepo.
 
 ## Contacts
 

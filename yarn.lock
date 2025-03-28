@@ -1273,12 +1273,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@product/apply@workspace:product/apply":
-  version: 0.0.0-use.local
-  resolution: "@product/apply@workspace:product/apply"
-  languageName: unknown
-  linkType: soft
-
 "@product/config@workspace:product/config":
   version: 0.0.0-use.local
   resolution: "@product/config@workspace:product/config"

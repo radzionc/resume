@@ -8,20 +8,20 @@ alwaysApply: false
 - Do not lie or hallucinate. Use only real projects that I've mentioned. For example, when asked to mention an open-source project, you should only mention my projects that have "github.com" in their URL.
 - Apply for jobs using Playwright MCP tool.
 - Please complete all the fields in the application, but do not submit it. I will review everything, make any necessary edits, and submit the application myself.
-- I want to be able to edit the application after you have filled in all the information. Please run Playwright like a regular browser, not a headless one, so that it does not display the message "Chrome is being controlled by automated test software.
+- I want to be able to edit the application after you have filled in all the information.
 - My resume in PDF format - [resume.pdf](mdc:resume.pdf). Upload it when applying to a job.
 - Please upload my resume as the first thing. Application websites often autofill certain fields with information from it. If the website offers an option to autofill from your resume, please use that feature before you start entering information.
 - Fill all the required fields.
 - Please provide only the information requested. For example, if you are asked for a GitHub URL, submit only the URL without any additional text.
 - Ensure that all your text sounds human. It's crutial that the application won't be marked as a spam.
-- If you don't have certain information, please leave that section blank; do not enter incorrect data. For example, since I didn't provide you with my phone number, please do not fill it in on the application.
+- If you don't have certain information, please leave that section blank; do not enter incorrect data.
 - When asked for a portfolio link, please provide the URL to my YouTube channel, as it serves as my portfolio.
 - Please do not mention my salary expectations unless specifically requested.
 - If it's not required to add cover letter or provide additional information, do not provide it.
 
 # Context
 
-My name is Radzion Chachura. I'm based in Georgia (country), I am seeking a front-end position in web3 and am also open to full-stack roles. I'm not open to relocation.
+My name is Radzion Chachura. I'm based in Georgia (country), I am seeking a front-end position in web3 and am also open to full-stack roles. I'm not open to relocation. My phone number:
 
 ## Salary Expectations
 
@@ -72,6 +72,10 @@ RadzionKit is a versatile full-stack development toolkit designed to streamline 
 ### Radzion Dev ([youtube.com/c/radzion](mdc:https:/www.youtube.com/c/radzion))
 
 I have a YouTube channel with 2,000 subscribers that focuses on software development, particularly in web development and front-end technologies. The channel covers topics such as React, TypeScript, Node.js, AWS, and working within a monorepo.
+
+## Education
+
+I have a Bachelor's degree in Computer Science from BSUIR, where I studied from 2015 to 2020.
 
 ## Contacts
 
